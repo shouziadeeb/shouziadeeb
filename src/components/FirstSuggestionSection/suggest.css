@@ -1,0 +1,86 @@
+.suggestion_section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.food_boxes {
+  width: 80%;
+  height: 20vw;
+  /* background-color: aliceblue; */
+  display: flex;
+  align-items: center;
+  padding: 0 2vw;
+  gap: 5.5vw;
+  overflow: scroll;
+  margin-top: 2vw;
+}
+.food_boxes::-webkit-scrollbar {
+  display: none;
+}
+.box {
+  text-align: center;
+  font-size: 1.5vw;
+}
+.box img {
+  width: 8vw;
+  height: 8vw;
+  border-radius: 50%;
+  box-shadow: 1px 1px 8px;
+  cursor: pointer;
+}
+.box img:hover {
+  scale: 104%;
+  transition: 0.5s;
+}
+.all_items {
+  height: fit-content;
+  position: absolute;
+  bottom: 0;
+  right: 5.5vw;
+  font-size: 2vw;
+  border: 1px solid gray;
+  padding: 0.5vw 1vw;
+  border-radius: 1vw;
+  /* transition: 1s; */
+  cursor: pointer;
+}
+.all_items p {
+  transition: 1s;
+}
+
+.filter_price {
+  height: fit-content;
+  position: absolute;
+  bottom: 0;
+  left: 5.5vw;
+  font-size: 2vw;
+  border: 1px solid gray;
+  padding: 0.5vw 1vw;
+  border-radius: 0.4vw;
+  cursor: pointer;
+}
+.dropown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.dropdown_box {
+  position: absolute;
+  right: 0;
+  background-color: white;
+  width: 10vw;
+  /* bottom: 0; */
+  border: 0.1px solid gray;
+  /* padding: 1vw 3vw; */
+  margin-top: 1vw;
+  margin-left: 4vw;
+  height: 0;
+  display: none;
+  transition: 0.5s;
+}
+.dropdown_box p {
+  border-bottom: 0.1vw solid gray;
+  text-align: center;
+  transition: 0.5s;
+}

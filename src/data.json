@@ -1,0 +1,184 @@
+[
+  {
+    "id":"1",
+    "name":"Single Cheese Pizza",
+    "img":"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/640px-Eq_it-na_pizza-margherita_sep2005_sml.jpg",
+    "category":"pizzaCheese",
+    "price":49,
+    "content":"This is not good for health",
+    "unique":"PIZZA"
+  },
+  {
+    "id":"2",
+    "name":"Corn Pizza",
+    "img":"https://tarasmulticulturaltable.com/wp-content/uploads/2017/04/New-York-Style-Pizza-5-of-5.jpg",
+    "category":"pizzaCornoffer",
+    "price":199,
+    "content":"This is not good for health"
+  },
+  {
+    "id":"3",
+    "name":"Vegetable Pizza",
+    "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvRSYByjQVa3jrpxTUTPxNDBj4BJRHugIGaA&s",
+    "category":"pizzaVegetable",
+    "price":299,
+    "content":"This is not good for health"
+  },
+  {
+    "id":"4",
+    "name":"Double Cheese Pizza",
+    "img":"https://popmenucloud.com/cdn-cgi/image/width%3D1200%2Cheight%3D1200%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/ouyvqwjm/c0457f01-dbf4-443f-a89f-3b5644e1f795.jpg",
+    "category":"pizzaDoubleCheese",
+    "price":229,
+    "content":"This is not good for health"
+  },
+  {
+    "id":"5",
+    "name":"Farm Fresh Pizza",
+    "img":"https://media.istockphoto.com/id/1404892450/photo/pizza-margherita.webp?b=1&s=612x612&w=0&k=20&c=yHUh2rQikFJWvJmBT4t5U7Y75pm7HslflgogcP9IavA=",
+    "category":"pizzaFarmFresh",
+    "price":399,
+    "content":"This is not good for health"
+  },
+  {
+    "id":"6",
+    "name":"Plane Burger",
+    "img":"https://static.vecteezy.com/system/resources/previews/019/023/604/non_2x/front-view-tasty-meat-burger-with-cheese-and-salad-free-photo.jpg",
+    "category":"Planeburger",
+    "price":129,
+    "content":"This is not good for health",
+    "unique":"BURGER"
+  },
+  {
+    "id":"7",
+    "name":"Cheese Burger",
+    "img":"https://static.vecteezy.com/system/resources/thumbnails/023/809/530/small_2x/a-flying-burger-with-all-the-layers-ai-generative-free-photo.jpg",
+    "category":"Cheeseburger",
+    "price":179,
+    "content":"This is not good for health"
+  },
+  {
+    "id":"8",
+    "name":"Tandoori Burger",
+    "img":"https://static.vecteezy.com/system/resources/previews/023/558/535/non_2x/close-up-of-a-juicy-burger-with-fries-it-look-very-delicious-big-sandwich-hamburger-with-juicy-beef-burger-cheese-tomato-and-red-onion-photo.jpg",
+    "category":"Tandooriburger",
+    "price":139,
+    "content":"This is not good for health"
+  },
+  {
+    "id":"9",
+    "name":"Fiery Burger",
+    "img":"https://t4.ftcdn.net/jpg/06/25/94/13/240_F_625941344_qyANTzAvvbIXny8rX4X0v8Df31o5DkyO.jpg",
+    "category":"Fieryburger",
+    "price":239,
+    "content":"This is not good for health"
+  },
+  {
+    "id":"10",
+    "name":"Veg Burger",
+    "img":"https://media.istockphoto.com/id/2061716709/photo/grilled-rib-burger.webp?b=1&s=612x612&w=0&k=20&c=Wr5FVrvoxpf4areNnoIXzsGOy4xQb1qa3c6vw5PyZdk=",
+    "category":"Vegburgeroffer",
+    "price":99,
+    "content":"This is not good for health"
+  },
+  {
+    "id":"11",
+    "name":"Momos",
+    "img":"https://cdn.foodaciously.com/static/recipes/ee9fd204-25cf-4e97-be5a-d7626470d420/easy-vegan-momos-recipe-7ab341154a5c13d6d9642300e7e2c92d-2560.jpg",
+    "category":"momos",
+    "price":60,
+    "content":"This is not good for health",
+    "unique":"MOMOS"
+  },
+  {
+    "id":"12",
+    "name":"Kurkure Momos",
+    "img":"https://5.imimg.com/data5/SELLER/Default/2022/2/NX/KK/VE/143198750/new-product-500x500.jpeg",
+    "category":"Kurkuremomosoffer",
+    "price":90,
+    "content":"This is not good for health"
+  },
+  {
+    "id":"13",
+    "name":"Gravy Momos",
+    "img":"https://res.cloudinary.com/purnesh/image/upload/f_auto/v1510643616/tikhi-gali-momos-header00.jpg",
+    "category":"Gravymomos",
+    "price":109,
+    "content":"This is not good for health"
+  },
+  {
+    "id":"14",
+    "name":"Roasted Momos",
+    "img":"https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/1/2017/04/07115730/070417_WowMomos_03.jpg",
+   "category":"Roastedmomos",
+    "price":109,
+    "content":"This is not good for health"
+  },
+  {
+    "id":"15",
+    "name":"Creamy Momos",
+    "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjr0xWn3OhXiyP2Nd0aHf8oBbTr9i6ohE2Bm5QjmNDrYlvDHdyRadwmqdsZvzReV_8fVc&usqp=CAU",
+   "category":"Creamymomos",
+    "price":109,
+    "content":"This is not good for health"
+  },
+  {
+    "id":"16",
+    "name":"Mix Orange",
+    "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvvwSZDDd3e4qTruiQVKf1kLOZ0ZoVUnseug&s",
+   "category":"Orangedrinks",
+    "price":105,
+    "content":"This is not good for health",
+    "unique":"DRINKS"
+  },
+  {
+    "id":"17",
+    "name":"Blue Berry",
+    "img":"https://img.taste.com.au/WtNfVSJq/taste/2016/11/blueberry-crush-118462-1.jpeg",
+   "category":"BlueBerrydrinksoffer",
+    "price":59,
+    "content":"This is not good for health"
+  },
+  {
+    "id":"18",
+    "name":"Strawberry",
+    "img":"https://www.southernliving.com/thmb/p3rj2KPkGbbMVpuN4mgBkVeZAWc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Strawberry_Margarita_005-559a65e7d653462a8fc17156c96cd76f.jpg",
+   "category":"Strawberrydrinks",
+    "price":79,
+    "content":"This is not good for health"
+  },
+  {
+    "id":"19",
+    "name":"Mojito",
+    "img":"https://www.foodandwine.com/thmb/e8AvEfBBfwjg3xmt6E__rRvSZlA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Mojito-FT-RECIPE1022-2000-85cdb1eb59454847b713713e32e365c0.jpg",
+   "category":"Mojitodrinks",
+    "price":119,
+    "content":"This is not good for health"
+  },
+  {
+    "id":"20",
+    "name":"Mango",
+    "img":"https://media.istockphoto.com/id/904617420/photo/fresh-mango-smoothie-in-the-glass.jpg?s=612x612&w=0&k=20&c=ogIRn5AfahJNU4W8UmQIZ-mJqL9tgOm9yH_-5WJmkSQ=",
+   "category":"Mangodrinks",
+    "price":109,
+    "content":"This is good for health"
+  },
+  {
+    "id":"21",
+    "name":"Chowmin",
+    "img":"https://www.myplantifulcooking.com/wp-content/uploads/2023/03/oyster-sauce-noodles-featured.jpg",
+   "category":"Chowminnoodles",
+    "price":105,
+    "content":"This is not good for health",
+    "unique":"NOODLES"
+  },
+  {
+    "id":"22",
+    "name":"Plane Sandwich",
+    "img":"https://www.indianhealthyrecipes.com/wp-content/uploads/2022/07/mayonnaise-sandwich-mayo-sandwich.jpg",
+   "category":"Planesandwichoffer",
+    "price":39,
+    "content":"This is not good for health",
+    "unique":"SANDWICH"
+  }
+]

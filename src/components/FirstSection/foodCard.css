@@ -1,0 +1,128 @@
+:root {
+  --primary-color: ;
+}
+
+.card_section {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vw;
+  justify-content: center;
+  align-items: center;
+  /* background-color: aqua; */
+  padding: 1vw 2vw;
+  transition: 0.9s;
+  /* background-color: aqua; */
+  background-size: 5rem 5rem;
+}
+
+.food_card {
+  width: 200px;
+  height: 100%;
+  display: flex;
+  padding: 10px;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  align-items: center;
+  /* flex-direction: column; */
+  transition: 0.5s;
+  background-color: #faf9f9;
+  border-radius: 1vw;
+  transition: 0.3s;
+}
+.btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.8vw;
+  /* background-color: antiquewhite; */
+  padding: 0 1vw;
+  margin: 1vw 0;
+  align-items: center;
+}
+.btn p {
+  font-size: 14px;
+  font-weight: 600;
+  color: red;
+}
+button {
+  font-size: 14px;
+  padding: 0.2vw;
+  color: green;
+  background: white;
+  border: 1px solid gainsboro;
+  padding: 4px 6px;
+}
+.food_card:hover {
+  /* transform: scale(1.1); */
+  scale: 105%;
+  border-radius: 0;
+}
+.food_card img {
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+  transition: 0.9s;
+}
+.card_text {
+  margin-top: 1vw;
+  height: 100%;
+  font-size: 14px;
+  padding: 0 1vw;
+  transition: 0.9s;
+  /* color: gray; */
+}
+.card_text p {
+  color: rgb(60, 59, 59);
+  font-size: 12px;
+}
+.card_text p span {
+  font-weight: bolder;
+}
+
+.to_close_sidebar {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(248, 244, 244, 0.162);
+
+  z-index: 1;
+}
+
+.to_close_signin {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.555);
+  z-index: 33333;
+}
+
+@media (max-width: 600px) {
+  .card_section {
+    flex-direction: column;
+    gap: 3vw;
+    width: 100%;
+  }
+  .food_card {
+    justify-content: center;
+    width: 260px;
+  }
+  .card_text {
+    font-size: 4vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+  }
+  .btn {
+    width: 90%;
+    /* background-color: antiquewhite; */
+  }
+  button {
+    font-size: 3vw;
+    padding: 1.4vw;
+    border-radius: 1vw;
+  }
+}

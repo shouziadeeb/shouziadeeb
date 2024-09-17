@@ -1,0 +1,159 @@
+main {
+  width: 100%;
+  height: 100%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 11;
+  transition: 0.8s;
+}
+.my_container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 11;
+  transition: 0.8s;
+}
+.close_addressBar {
+  position: absolute;
+  top: 1vw;
+  right: 10px;
+  cursor: pointer;
+  font-size: 3vw;
+}
+.address_box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.address_box form {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  width: 50%;
+}
+.address_box form input {
+  width: 30vw;
+  height: 6vw;
+  padding-left: 1vw;
+  outline: none;
+  font-size: 2vw;
+  border: 0.1px solid rgb(217, 215, 215);
+  /* border-bottom: 0; */
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.home_work {
+  width: 30vw;
+  border: 1px solid gainsboro;
+  height: 6vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.location {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-right: 1px solid gainsboro;
+  color: gray;
+  background: white;
+  cursor: pointer;
+  font-size: 2vw;
+}
+.location:hover {
+  background: black;
+  color: white;
+  border: 2px solid black;
+}
+.location_content {
+  width: 100%;
+}
+
+.address_box button {
+  width: 30vw;
+  height: 5vw;
+  border: none;
+  background: coral;
+  color: aliceblue;
+  margin-top: 2vw;
+  font-weight: 600;
+  font-size: 15px;
+}
+.text {
+  width: 60%;
+}
+.address_div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 2vw;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2v + +w;
+  color: rgb(52, 51, 51);
+}
+.address_item {
+  flex-basis: calc(33.33% - 2vw);
+  box-sizing: border-box;
+}
+.adddress_on_display {
+  display: flex;
+  border: 1px solid gainsboro;
+  width: 20vw;
+  font-size: 16px;
+  gap: 1vw;
+  line-height: 20px;
+  padding: 2vw;
+  /* padding: 23px 30px 29px 57px; */
+  /* flex-basis: calc(33.33% - 2vw); */
+  box-sizing: border-box;
+  margin: 0 25px 25px 0;
+}
+.adddress_on_display:hover {
+  box-shadow: 0 2px 5px rgb(187, 186, 186);
+}
+.content_icon {
+  width: 10%;
+}
+.right_content .deliver_button {
+  padding: 9px 0;
+  color: #fff;
+  text-transform: uppercase;
+  background: #60b246;
+  border: 0;
+  cursor: pointer;
+  width: 130px;
+  height: 34px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  position: relative;
+  margin-top: 2vw;
+}
+.address_div button {
+  padding: 9px 0;
+  text-transform: uppercase;
+  color: #60b246;
+  border: 1px solid #60b246;
+  cursor: pointer;
+  width: 130px;
+  height: 34px;
+  font-weight: 600;
+  background: none;
+  text-align: center;
+  font-size: 14px;
+}
