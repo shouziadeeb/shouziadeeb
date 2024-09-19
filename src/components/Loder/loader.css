@@ -1,0 +1,15 @@
+.line-loader-container {
+  width: 100%;
+  height: 4px;
+  background-color: #f3f3f3;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+}
+
+.line-loader {
+  height: 100%;
+  background-color: coral; /* You can change the color of the loading line */
+  width: 0;
+  transition: width 0.4s ease;
+}

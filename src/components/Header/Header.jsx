@@ -8,6 +8,7 @@ import Badge from "@mui/material/Badge";
 import "./header.css";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import Loader from "../Loder/Loader";
 
 const Header = ({
   badgeCounter,

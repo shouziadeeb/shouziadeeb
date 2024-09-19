@@ -79,7 +79,7 @@ const CartSidebar = ({ showCart, cart, setCart, setshowAddress }) => {
         setUser={setUser}
       />
       <div className="food_item_and_price_list">
-        {cartData &&
+        {cartData && cartData.length > 0 ? (
           cartData.map((cartItem) => {
             return (
               <div className="sidebar_div" key={cartItem.id}>
@@ -112,7 +112,10 @@ const CartSidebar = ({ showCart, cart, setCart, setshowAddress }) => {
                 </div>
               </div>
             );
-          })}
+          })
+        ) : (
+          <p>No items here</p>
+        )}
       </div>
       <div className="sub_total">
         <div className="total_price_and_btn">

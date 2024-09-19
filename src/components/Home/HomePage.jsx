@@ -5,6 +5,7 @@ import foods from "../../data.json";
 import FoodList from "../FirstSection/FoodList";
 import { Footer } from "../Footer/Footer";
 import { useSelector } from "react-redux";
+import Carousel from "../Carousel/Carousel";
 
 const HomePage = () => {
   const [filters, setFilters] = useState({
@@ -99,6 +100,7 @@ const HomePage = () => {
           cart={cart}
         ></FoodList>
       </div>
+      <Carousel />
       <Footer />
     </>
   );
