@@ -1,8 +1,4 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import Header from "./components/Header/Header";
-import Suggest from "./components/FirstSuggestionSection/Suggest";
-import FoodList from "./components/FirstSection/FoodList";
-
 import { Footer } from "./components/Footer/Footer";
 import Address from "./components/AddresBar/Address";
 import { useSelector } from "react-redux";

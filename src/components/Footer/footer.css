@@ -51,6 +51,7 @@ h4 {
 .download .para {
   width: 50%;
   display: flex;
+  z-index: 11;
   justify-content: center;
   font-size: 2.2vw;
   font-weight: 700;
@@ -80,10 +81,17 @@ h4 {
 .download .visit_store .box .store {
   width: 40%;
 }
+.download .visit_store .para {
+}
 .download .visit_store img {
   width: 100%;
   height: 4vw;
   border-radius: 0;
   box-shadow: none;
   background: none;
+  z-index: -11;
+}
+.download .visit_store img:hover {
+  scale: 1%;
+  z-index: -11;
 }

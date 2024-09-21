@@ -14,6 +14,16 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  /* border-bottom: 1px solid gray; */
+  margin-bottom: 4vw;
+  box-shadow: 1px 100px 20px whitesmoke;
+  padding-bottom: 4vw;
+}
+hr {
+  width: 95vw;
+  margin: 5vw 0;
+  display: none;
 }
 a {
   list-style: none;
