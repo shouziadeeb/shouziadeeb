@@ -8,7 +8,13 @@ import "./cartSidebar.css";
 import { handleQuantity } from "../../store/redux";
 import { useNavigate } from "react-router-dom";
 
-const CartSidebar = ({ showCart, cart, setCart, setshowAddress }) => {
+const CartSidebar = ({
+  showCart,
+  setShowCart,
+  cart,
+  setCart,
+  setshowAddress,
+}) => {
   const [allPrice, setAllPrice] = useState(0);
   const { user, setUser, logout } = useUser();
   const [sigInSidebar, setSignInSidebar] = useState(false);
@@ -17,6 +23,14 @@ const CartSidebar = ({ showCart, cart, setCart, setshowAddress }) => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const Cartwidth = showCart ? (windowWidth < 600 ? "100%" : "40%") : "0";
+
+  // useEffect(() => {
+  //   const handleResize = () => setWindowWidth(window.innerWidth);
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
 
   const updateCartQuantity = (item, number) => {
     dispatch(handleQuantity({ item, number }));
@@ -43,22 +57,27 @@ const CartSidebar = ({ showCart, cart, setCart, setshowAddress }) => {
   const handleEmailSidebar = () => {
     setSignInSidebar(true);
   };
-  console.log(cartData);
+  console.log(showCart);
+
   return (
-    <div className="cart_sidebar" style={{ width: showCart ? "40%" : "0" }}>
+    <div className="cart_sidebar" style={{ width: Cartwidth }}>
       <nav>
+        <div
+          style={{ cursor: "pointer",fontSize:"3vw" }}
+          onClick={() => setShowCart(false)}
+        >{`>`}</div>
         {user ? (
           <div
             style={{
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              width: "100%",
+              // width: "50%",
             }}
           >
-            <p style={{ fontSize: "2vw", cursor: "pointer" }} onClick={logout}>
+            {/* <p style={{ fontSize: "3vw", cursor: "pointer" }} onClick={logout}>
               <IoLogInOutline />
-            </p>
+            </p> */}
             <p style={{ display: "flex", gap: ".4vw", alignItems: "center" }}>
               <FiUser />
               <span style={{ fontWeight: "bolder" }}>{user.name}</span>
@@ -78,6 +97,7 @@ const CartSidebar = ({ showCart, cart, setCart, setshowAddress }) => {
         setSignInSidebar={setSignInSidebar}
         setUser={setUser}
       />
+      {/* <div className="close_cart" onClick={()=>}>2</div> */}
       <div className="food_item_and_price_list">
         {cartData && cartData.length > 0 ? (
           cartData.map((cartItem) => {

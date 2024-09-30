@@ -112,15 +112,17 @@ input[type="number"]::-webkit-inner-spin-button {
 .adddress_on_display {
   display: flex;
   border: 1px solid gainsboro;
-  width: 20vw;
-  font-size: 16px;
+  width: 30vw;
+  height: 20vw;
+  font-size: 1.6vw;
   gap: 1vw;
-  line-height: 20px;
-  padding: 2vw;
-  /* padding: 23px 30px 29px 57px; */
-  /* flex-basis: calc(33.33% - 2vw); */
+  position: relative;
+  padding: 2.5vw;
   box-sizing: border-box;
   margin: 0 25px 25px 0;
+}
+.adddress_on_display::-webkit-scrollbar {
+  display: none;
 }
 .adddress_on_display:hover {
   box-shadow: 0 2px 5px rgb(187, 186, 186);
@@ -135,14 +137,17 @@ input[type="number"]::-webkit-inner-spin-button {
   background: #60b246;
   border: 0;
   cursor: pointer;
-  width: 130px;
-  height: 34px;
+  width: 15vw;
+  height: 4vw;
   font-weight: 600;
   text-align: center;
-  font-size: 14px;
+  font-size: 1.5vw;
   letter-spacing: 0.3px;
-  position: relative;
   margin-top: 2vw;
+  position: absolute;
+  bottom: 2.5vw;
+  left: 50%;
+  transform: translate(-50%);
 }
 .address_div button {
   padding: 9px 0;
@@ -156,4 +161,66 @@ input[type="number"]::-webkit-inner-spin-button {
   background: none;
   text-align: center;
   font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .address_div button {
+    width: 14vw;
+    height: 5vw;
+    font-size: 2vw;
+    padding: 7px 0;
+  }
+  .right_content .deliver_button {
+    border: 0;
+    cursor: pointer;
+    width: 14vw;
+    height: 5vw;
+    font-size: 1.5vw;
+    border-radius: 1px;
+  }
+  .adddress_on_display {
+    display: flex;
+    border: 1px solid gainsboro;
+    height: 30vw;
+    line-height: 17px;
+    width: 40vw;
+    font-size: 2vw;
+    gap: 1vw;
+    box-sizing: border-box;
+    margin: 0 25px 25px 0;
+  }
+  .address_box form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  .address_box form input {
+    width: 70vw;
+    height: 14vw;
+    padding-left: 3.5vw;
+    outline: none;
+    font-size: 3.5vw;
+    border: 0.1px solid rgb(217, 215, 215);
+  }
+  .home_work {
+    width: 70vw;
+    border: 1px solid gainsboro;
+    height: 14vw;
+  }
+  .location {
+    font-size: 4vw;
+  }
+  .address_box button {
+    width: 70vw;
+    height: 13vw;
+    border: none;
+    background: coral;
+    color: aliceblue;
+    margin-top: 4vw;
+    font-weight: 600;
+    font-size: 3.5vw;
+  }
 }

@@ -9,7 +9,7 @@ footer {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 footer p {
-  font-size: 1.2vw;
+  font-size: 1.3vw;
   opacity: 0.5;
 }
 .div3 {
@@ -18,7 +18,7 @@ footer p {
   gap: 3vw;
 }
 h4 {
-  font-size: larger;
+  font-size: 2vw;
   font-weight: 700;
 }
 .div2 {
@@ -67,31 +67,31 @@ h4 {
 .download .visit_store .box {
   background: black;
   display: flex;
-  width: 18vw;
+  width: 16vw;
   padding-left: 1vw;
   /* justify-content: center; */
   border-radius: 1vw;
   align-items: center;
-  height: 6vw;
+  height: 4vw;
   cursor: pointer;
   padding: 1vw;
-  font-size: 1.3vw;
+  font-size: 1vw;
+  font-weight: bold;
   color: white;
 }
 .download .visit_store .box .store {
   width: 40%;
 }
 .download .visit_store .para {
+  z-index: 1;
 }
 .download .visit_store img {
   width: 100%;
-  height: 4vw;
+  height: 2.8vw;
   border-radius: 0;
   box-shadow: none;
   background: none;
-  z-index: -11;
 }
 .download .visit_store img:hover {
-  scale: 1%;
-  z-index: -11;
+  scale: 100%;
 }

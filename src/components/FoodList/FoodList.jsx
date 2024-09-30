@@ -25,6 +25,7 @@ const FoodList = ({
           {" "}
         </div>
         <CartSidebar
+          setShowCart={setShowCart}
           showCart={showCart}
           cart={cart}
           setCart={setCart}

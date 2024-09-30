@@ -20,11 +20,7 @@ button {
   box-shadow: 1px 100px 20px whitesmoke;
   padding-bottom: 4vw;
 }
-hr {
-  width: 95vw;
-  margin: 5vw 0;
-  display: none;
-}
+
 a {
   list-style: none;
   display: flex;

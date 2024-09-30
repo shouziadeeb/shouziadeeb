@@ -2,7 +2,6 @@ import React, { useMemo, useState } from "react";
 import Header from "../Header/Header";
 import Suggest from "../FirstSuggestionSection/Suggest";
 import foods from "../../data.json";
-// import FoodList from "../FoodList/FoodList";
 import { Footer } from "../Footer/Footer";
 import { useSelector } from "react-redux";
 import Carousel from "../Carousel/Carousel";
@@ -11,7 +10,7 @@ import FoodList from "../FoodList/FoodList";
 const HomePage = () => {
   const [filters, setFilters] = useState({
     search: "",
-    category: "",
+    category: "", 
     offer: "",
     price: [],
   });

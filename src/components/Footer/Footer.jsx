@@ -20,20 +20,20 @@ export const Footer = () => {
             </div>
             <div className="store_name">
               <p>GET IT ON</p>
-              <h4>Google Play</h4>
+              <p>Google Play</p>
             </div>
           </div>
           <div className="box">
             <div className="store">
               <img
-                style={{ width: "8vw" }}
-                src="https://i.pinimg.com/736x/74/7e/09/747e0936a18b5bcfb5bb0fd254f799bf.jpg"
+                style={{ width: "5vw" }}
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCUX5Row2QfumC7m_1dDV0zsjMPHhkkVPfYg&s"
                 alt=""
               />
             </div>
             <div className="store_name">
               <p>GET IT ON</p>
-              <h4>Google Play</h4>
+              <p>Google Play</p>
             </div>
           </div>
         </div>

@@ -2,6 +2,8 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
   position: relative;
 }
 .food_boxes {
@@ -14,11 +16,16 @@
   gap: 5.5vw;
   overflow: scroll;
   margin-top: 2vw;
+  font-weight: bold;
+  color: rgb(45, 44, 44);
 }
 .food_boxes::-webkit-scrollbar {
   display: none;
 }
-.box {
+.food_boxes .box {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
   text-align: center;
   font-size: 1.5vw;
 }
@@ -33,28 +40,28 @@
   scale: 104%;
   transition: 0.5s;
 }
+.filter_btn_div {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
 .all_items {
   height: fit-content;
-  position: absolute;
-  bottom: 0;
   right: 5.5vw;
-  font-size: 2vw;
+  font-size: 1.4vw;
   border: 1px solid gray;
   padding: 0.5vw 1vw;
-  border-radius: 1vw;
-  /* transition: 1s; */
+  border-radius: 0.4vw;
   cursor: pointer;
+  /* display: none; */
 }
 .all_items p {
   transition: 1s;
 }
-
 .filter_price {
   height: fit-content;
-  position: absolute;
-  bottom: 0;
-  left: 5.5vw;
-  font-size: 2vw;
+  position: relative;
+  font-size: 1.4vw;
   border: 1px solid gray;
   padding: 0.5vw 1vw;
   border-radius: 0.4vw;
@@ -70,22 +77,31 @@
   right: 0;
   background-color: white;
   width: 10vw;
-  /* bottom: 0; */
-  border: 0.1px solid gray;
-  /* padding: 1vw 3vw; */
+  /* border: 0.1px solid gray; */
   margin-top: 1vw;
   margin-left: 4vw;
-  height: 0;
   display: none;
   transition: 0.5s;
+  z-index: 111;
 }
 .dropdown_box p {
   border-bottom: 0.1vw solid gray;
   text-align: center;
   transition: 0.5s;
 }
-
-
+.hr_tag {
+  width: 100%;
+  height: 7vh;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+hr {
+  width: 80%;
+  height: 1px;
+  border: none;
+  background-color: rgb(208, 208, 208);
+}
 
 @media (max-width: 600px) {
   .suggestion_section {
@@ -97,7 +113,7 @@
   }
   .box img {
     width: 11vw;
-    height: 11vw; 
+    height: 11vw;
     border-radius: 50%;
     box-shadow: 1px 1px 8px;
     cursor: pointer;

@@ -5,7 +5,7 @@
   right: 0;
   background-color: rgba(248, 243, 243, 0.872);
   backdrop-filter: blur(0.8vw);
-  z-index: 2;
+  z-index: 20;
   display: flex;
   transition: 0.8s;
   flex-direction: column;
@@ -32,6 +32,7 @@
   padding: 1vw 2vw;
   border-bottom: 0.1px solid gray;
   display: flex;
+  /* flex-direction: column; */
   justify-content: space-between;
   font-size: 1.5vw;
   align-items: center;
@@ -107,7 +108,7 @@
   background-color: #fc7f19d2;
   padding: 1rem;
   align-items: center;
-  justify-content: end;
+  justify-content: space-between;
   color: aliceblue;
 }
 .cart_sidebar nav button {
@@ -118,7 +119,29 @@
   width: 7vw;
   border-radius: 0.2vw;
   background: white;
+
   border: none;
   justify-content: center;
   gap: 0.4vw;
+}
+
+@media (max-width: 600px) {
+  .sidebar_div {
+    font-size: 2.5vw;
+  }
+  .sidebar_div img {
+    width: 6vw;
+    height: 6vw;
+  }
+  .quantity .minus,
+  .plus {
+    font-size: 3.5vw;
+  }
+  .total_price_and_btn button {
+ 
+   
+    font-size: 2.5vw;
+    border-radius: 0.5vw;
+   
+  }
 }
