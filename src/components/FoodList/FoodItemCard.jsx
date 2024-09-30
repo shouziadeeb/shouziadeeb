@@ -18,9 +18,9 @@ export function FoodItemCard({
     <div className="food_card">
       <img src={foodItem.img} />
       <div className="card_text">
-        <h3>{foodItem.name} </h3>
+        <h4>{foodItem.name} </h4>
         <p>{foodItem.content} </p>
-      </div>
+      </div> 
       <div className="btn">
         <p>
           ₹<span>{foodItem.price}.00</span>
