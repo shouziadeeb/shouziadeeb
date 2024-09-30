@@ -163,7 +163,7 @@ input[type="number"]::-webkit-inner-spin-button {
   font-size: 14px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .address_div button {
     width: 14vw;
     height: 5vw;

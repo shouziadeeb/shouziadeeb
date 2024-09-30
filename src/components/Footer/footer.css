@@ -9,7 +9,7 @@ footer {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 footer p {
-  font-size: 1.3vw;
+  font-size: 2.5vw;
   opacity: 0.5;
 }
 .div3 {
@@ -17,8 +17,8 @@ footer p {
   flex-direction: column;
   gap: 3vw;
 }
-h4 {
-  font-size: 2vw;
+h3 {
+  font-size: 3vw;
   font-weight: 700;
 }
 .div2 {

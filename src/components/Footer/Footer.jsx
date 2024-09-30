@@ -48,7 +48,7 @@ export const Footer = () => {
           </h3>
         </div>
         <div className="div2">
-          <h4>Company</h4>
+          <h3>Company</h3>
           <p>About</p>
           <p>Careers</p>
           <p>Team</p>
@@ -57,7 +57,7 @@ export const Footer = () => {
         </div>
         <div className="div3">
           <div>
-            <h4>Contact us</h4>
+            <h3>Contact us</h3>
             <Link to="/help">
               {" "}
               <p style={{ color: "white" }}>Help & Support</p>
@@ -66,7 +66,7 @@ export const Footer = () => {
             <p>Ride with us</p>
           </div>
           <div>
-            <h4>Legal</h4>
+            <h3>Legal</h3>
             <p> Terms & Conditions</p>
             <p>Cookie Policy</p>
             <p>Privacy Policy</p>
@@ -74,7 +74,7 @@ export const Footer = () => {
           </div>
         </div>
         <div className="div4">
-          <h4>We deliver to:</h4>
+          <h3>We deliver to:</h3>
         </div>
       </footer>
     </>
