@@ -1,5 +1,5 @@
 import React from "react";
-import "./HeaderMobile.css";
+import "./headerMobile.css";
 import { FaUserCircle, FaLocationArrow } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
 
