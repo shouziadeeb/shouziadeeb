@@ -30,11 +30,10 @@ const HeaderMobile = ({ handleSearch, searchValue }) => {
           </div>
         </div>
         <div className="heading_and_img">
-          <div>
-            <h6>Book now and enjoy with crasiest deals and offers </h6>
-            <h4>STEAL DEALS!</h4>
-            <p>Starting at ₹39</p>
-          </div>
+          <h6>Book now and enjoy with crasiest deals and offers </h6>
+          <h4>STEAL DEALS!</h4>
+          <p>Starting at ₹39</p>
+
           {/* <div>
             <img src="src\assets\Food Delivery.png" />
           </div> */}
