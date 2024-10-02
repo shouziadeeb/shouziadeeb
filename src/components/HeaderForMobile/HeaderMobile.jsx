@@ -35,10 +35,9 @@ const HeaderMobile = ({ handleSearch, searchValue }) => {
         </div>
         <div>
           <img
-            src="src\assets\GIF\58a1d736ea0a1-1--unscreen.gif"
+            src="src\assets\images\58a1d736ea0a1-1--unscreen.gif"
             alt="chef icon"
           />
-          {/* <img src="src\assets\GIF\gifforweb-unscreen.gif" alt="chef icon" /> */}
         </div>
       </div>
       <div className="para">
