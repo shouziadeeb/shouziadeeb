@@ -35,9 +35,9 @@ const HeaderMobile = ({ handleSearch, searchValue }) => {
             <h4>STEAL DEALS!</h4>
             <p>Starting at ₹39</p>
           </div>
-          <div>
-            <img src="src\assets\food.svg" alt="" />
-          </div>
+          {/* <div>
+            <img src="src\assets\Food Delivery.png" />
+          </div> */}
         </div>
         <div className="para">
           <p>delivery will be free on order above ₹159</p>
