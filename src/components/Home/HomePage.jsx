@@ -7,7 +7,7 @@ import { Footer } from "../Footer/Footer";
 import { useSelector } from "react-redux";
 import Carousel from "../Carousel/Carousel";
 import FoodList from "../FoodList/FoodList";
-import HeaderMobile from "../Header for Mobile/HeaderMobile";
+import HeaderMobile from "../HeaderForMobile/HeaderMobile";
 
 const HomePage = () => {
   const [filters, setFilters] = useState({
