@@ -63,10 +63,7 @@ const CartSidebar = ({
   return (
     <div className="cart_sidebar" style={{ width: Cartwidth }}>
       <nav>
-        <div
-          style={{ cursor: "pointer", fontSize: "3vw" }}
-          onClick={() => setShowCart(false)}
-        >
+        <div onClick={() => setShowCart(false)} className="to_close_cart">
           <FaArrowLeft />
         </div>
         {user ? (
@@ -128,7 +125,7 @@ const CartSidebar = ({
                     +
                   </button>
                 </div>
-                <div>
+                <div className="total_price_">
                   <p>
                     ₹<span>{cartItem.totalPrice}</span>
                   </p>

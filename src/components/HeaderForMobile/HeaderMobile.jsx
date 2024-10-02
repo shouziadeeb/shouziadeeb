@@ -19,7 +19,7 @@ const HeaderMobile = ({ handleSearch, searchValue }) => {
         <div className="search_input">
           <input
             type="text"
-            placeholder={`Search for ${item}`}
+            placeholder={`Search for item...`}
             value={searchValue}
             onChange={(e) => handleSearch(e.target.value)}
           />
