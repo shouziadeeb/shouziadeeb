@@ -34,10 +34,7 @@ const HeaderMobile = ({ handleSearch, searchValue }) => {
           <p>Starting at ₹39</p>
         </div>
         <div>
-          <img
-            src="src\assets\images\58a1d736ea0a1-1--unscreen.gif"
-            alt="chef icon"
-          />
+          <img src="src\assets\images\Chef_icon.svg.png" alt="chef icon" />
         </div>
       </div>
       <div className="para">
