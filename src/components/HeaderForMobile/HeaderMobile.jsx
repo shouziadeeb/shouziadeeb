@@ -7,38 +7,41 @@ const HeaderMobile = ({ handleSearch, searchValue }) => {
   const item = "pizza";
   return (
     <div className="header">
-      <div className="addrs_and_user">
-        <p>
-          <FaLocationArrow /> Amroha
-        </p>
-        <div className="user_icon">
-          <FaUserCircle />
+      <div className="header_content">
+        <div className="addrs_and_user">
+          <p>
+            <FaLocationArrow /> Amroha
+          </p>
+          <div className="user_icon">
+            <FaUserCircle />
+          </div>
         </div>
-      </div>
-      <div className="search_input">
-        <input
-          type="text"
-          placeholder={`Search for ${item}`}
-          value={searchValue}
-          onChange={(e) => handleSearch(e.target.value)}
-        />
-        <div className="icons">
-          <span>
-            <IoIosSearch />
-          </span>
+        <div className="search_input">
+          <input
+            type="text"
+            placeholder={`Search for ${item}`}
+            value={searchValue}
+            onChange={(e) => handleSearch(e.target.value)}
+          />
+          <div className="icons">
+            <span>
+              <IoIosSearch />
+            </span>
+          </div>
         </div>
-      </div>
-      <div className="heading_and_img">
-        <div>
-          <h4>STEAL DEALS!</h4>
-          <p>Starting at ₹39</p>
+        <div className="heading_and_img">
+          <div>
+            <h6>Book now and enjoy with crasiest deals and offers </h6>
+            <h4>STEAL DEALS!</h4>
+            <p>Starting at ₹39</p>
+          </div>
+          <div>
+            <img src="src\assets\food.svg" alt="" />
+          </div>
         </div>
-        <div>
-          <img src="src\assets\images\Chef_icon.svg.png" alt="chef icon" />
+        <div className="para">
+          <p>delivery will be free on order above ₹159</p>
         </div>
-      </div>
-      <div className="para">
-        <p>delivery will be free on order above ₹159</p>
       </div>
     </div>
   );
