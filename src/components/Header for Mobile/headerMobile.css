@@ -3,10 +3,9 @@
   height: 40vh;
   width: 100%;
   background-color: skyblue;
-  /* border-bottom: 2vw solid rgb(99, 184, 218); */
   border-radius: 0 0 4vw 4vw;
   padding: 2vw;
-  padding-top: 4vw;
+  padding-top: 3vw;
   position: relative;
   transition: 0.5s;
 }
@@ -47,6 +46,7 @@
 }
 .header .heading_and_img {
   width: 90%;
+  height: 25vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -68,11 +68,11 @@
   background-color: rgb(99, 184, 218);
   border-radius: 0 0 4vw 4vw;
 }
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4vw;
+    gap: 1.5vw;
   }
 }
