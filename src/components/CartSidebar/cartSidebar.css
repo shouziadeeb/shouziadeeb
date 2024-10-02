@@ -132,6 +132,9 @@
 }
 
 @media (max-width: 600px) {
+  .cart_sidebar {
+    background-color:white ;
+  }
   .sidebar_div {
     font-size: 4.5vw;
   }

@@ -22,7 +22,7 @@
   height: 100%;
   display: flex;
   padding: 10px;
-  /* justify-content: center; */
+  justify-content: center;
   flex-wrap: wrap;
   align-items: center;
   /* flex-direction: column; */

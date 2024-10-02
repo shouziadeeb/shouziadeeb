@@ -126,7 +126,7 @@ const Address = ({ showAddress, setshowAddress }) => {
               </div>
             );
           })}
-          <button onClick={handleFormDisplay}>+ ADD NEW </button>
+          <button onClick={handleFormDisplay}>+ ADD NEW ADDRESS</button>
         </div>
       </div>
     </main>

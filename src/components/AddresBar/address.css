@@ -96,13 +96,11 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 .address_div {
   width: 100%;
-  height: 100%;
   display: flex;
   padding: 2vw;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 2v + +w;
   color: rgb(52, 51, 51);
 }
 .address_item {
@@ -112,12 +110,12 @@ input[type="number"]::-webkit-inner-spin-button {
 .adddress_on_display {
   display: flex;
   border: 1px solid gainsboro;
-  width: 30vw;
+  width: 25vw;
   height: 20vw;
-  font-size: 1.6vw;
+  font-size: 1.2vw;
   gap: 1vw;
   position: relative;
-  padding: 2.5vw;
+  padding: 1vw;
   box-sizing: border-box;
   margin: 0 25px 25px 0;
 }
@@ -131,63 +129,55 @@ input[type="number"]::-webkit-inner-spin-button {
   width: 10%;
 }
 .right_content .deliver_button {
-  padding: 9px 0;
   color: #fff;
   text-transform: uppercase;
   background: #60b246;
-  border: 0;
   cursor: pointer;
-  width: 15vw;
-  height: 4vw;
   font-weight: 600;
   text-align: center;
-  font-size: 1.5vw;
-  letter-spacing: 0.3px;
-  margin-top: 2vw;
+  font-size: 1vw;
+  padding: 1vw 2vw;
   position: absolute;
   bottom: 2.5vw;
   left: 50%;
   transform: translate(-50%);
 }
 .address_div button {
-  padding: 9px 0;
+  padding: 1vw;
   text-transform: uppercase;
   color: #60b246;
   border: 1px solid #60b246;
   cursor: pointer;
-  width: 130px;
-  height: 34px;
   font-weight: 600;
   background: none;
   text-align: center;
-  font-size: 14px;
+  font-size: 1vw;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
   .address_div button {
-    width: 14vw;
-    height: 5vw;
-    font-size: 2vw;
-    padding: 7px 0;
+    font-size: 2.2vw;
+    padding: 2vw 4vw;
   }
   .right_content .deliver_button {
     border: 0;
     cursor: pointer;
-    width: 14vw;
-    height: 5vw;
-    font-size: 1.5vw;
+    font-size: 2vw;
+    padding: 1vw 2vw;
     border-radius: 1px;
   }
   .adddress_on_display {
     display: flex;
     border: 1px solid gainsboro;
-    height: 30vw;
+    height: 40vw;
     line-height: 17px;
-    width: 40vw;
-    font-size: 2vw;
-    gap: 1vw;
+    width: 60vw;
+    font-size: 2.8vw;
     box-sizing: border-box;
-    margin: 0 25px 25px 0;
+    margin-top: 2vw;
+  }
+  .address_div {
+    flex-direction: column;
   }
   .address_box form {
     display: flex;
