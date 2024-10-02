@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { FaAngleRight } from "react-icons/fa6";
 import Header from "../Header/Header";
 import Suggest from "../FirstSuggestionSection/Suggest";
 import foods from "../../data.json";
@@ -6,11 +7,12 @@ import { Footer } from "../Footer/Footer";
 import { useSelector } from "react-redux";
 import Carousel from "../Carousel/Carousel";
 import FoodList from "../FoodList/FoodList";
+import HeaderMobile from "../Header for Mobile/HeaderMobile";
 
 const HomePage = () => {
   const [filters, setFilters] = useState({
     search: "",
-    category: "", 
+    category: "",
     offer: "",
     price: [],
   });
@@ -76,6 +78,7 @@ const HomePage = () => {
   }, [filters]);
   return (
     <>
+      <HeaderMobile handleSearch={handleSearch} searchValue={filters.search} />
       <Header
         badgeCounter={cartData.length}
         setSidebar={setShowCart}
@@ -103,6 +106,28 @@ const HomePage = () => {
       </div>
       <Carousel />
       <Footer />
+      <div
+        className="cart_mobile"
+        style={{ display: cartData.length > 0 ? "block" : "none" }}
+      >
+        <div className="for_mobileCart">
+          <p>
+            <span>{cartData.length}</span>
+            {cartData.length > 1 ? " Items" : " Item"} Added
+          </p>
+          <p
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: ".5vw",
+              cursor: "pointer",
+            }}
+            onClick={() => setShowCart(true)}
+          >
+            View Cart <FaAngleRight />
+          </p>
+        </div>
+      </div>
     </>
   );
 };

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { IoLogInOutline } from "react-icons/io5";
 import { FiUserPlus, FiUser } from "react-icons/fi";
+import { FaArrowLeft } from "react-icons/fa6";
 import { useUser } from "../../hooks/useUser";
 import { SignIn } from "../SignIn/SignIn";
 import "./cartSidebar.css";
@@ -63,9 +64,11 @@ const CartSidebar = ({
     <div className="cart_sidebar" style={{ width: Cartwidth }}>
       <nav>
         <div
-          style={{ cursor: "pointer",fontSize:"3vw" }}
+          style={{ cursor: "pointer", fontSize: "3vw" }}
           onClick={() => setShowCart(false)}
-        >{`>`}</div>
+        >
+          <FaArrowLeft />
+        </div>
         {user ? (
           <div
             style={{

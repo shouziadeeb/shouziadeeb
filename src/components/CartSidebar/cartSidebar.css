@@ -22,7 +22,7 @@
   flex-direction: column;
   padding: 2vw;
   overflow: scroll;
-  border-bottom: 2px solid;
+  border-bottom: 1px solid gray;
 }
 .food_item_and_price_list::-webkit-scrollbar {
   display: none;

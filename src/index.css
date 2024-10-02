@@ -27,3 +27,24 @@ a {
   color: black;
   text-decoration: none;
 }
+.cart_mobile {
+  position: fixed;
+  background-color: rgb(29, 166, 29);
+  width: 90vw;
+  height: 15vw;
+  z-index: 11;
+  bottom: 0%;
+  border-radius: 1vw;
+  left: 50%;
+  display: none;
+  transform: translate(-50%, -50%);
+}
+.for_mobileCart {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: aliceblue;
+  font-size: 4.5vw;
+}

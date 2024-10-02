@@ -71,13 +71,13 @@
   position: relative;
   display: flex;
   align-items: center;
+  margin-left: 2vw;
 }
 .dropdown_box {
   position: absolute;
   right: 0;
   background-color: white;
   width: 10vw;
-  /* border: 0.1px solid gray; */
   margin-top: 1vw;
   margin-left: 4vw;
   display: none;
@@ -117,5 +117,20 @@ hr {
     border-radius: 50%;
     box-shadow: 1px 1px 8px;
     cursor: pointer;
+  }
+  .dropdown_box {
+    position: absolute;
+    right: 0;
+    background-color: white;
+    width: 20vw;
+    height: auto;
+    margin-top: 1vw;
+    margin-left: 8vw;
+    display: none;
+    transition: 0.5s;
+    z-index: 111;
+  }
+  .filter_price {
+    font-size: 3vw;
   }
 }
