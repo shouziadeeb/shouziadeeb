@@ -33,12 +33,12 @@
 /* SECOND CAROUSEL  */
 @media (max-width: 600px) {
   .CarouselSecond {
-    width: 100%;
+    width: 100vw;
     display: flex;
     justify-content: center;
   }
   .Mycarousel {
-    width: 370px;
+    width: 90%;
     height: 35vw;
     overflow: hidden;
     position: relative;
