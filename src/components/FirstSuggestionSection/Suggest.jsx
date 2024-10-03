@@ -67,9 +67,6 @@ const Suggest = ({
           </div>
         </div>
       </section>
-      <div className="hr_tag">
-        <hr />
-      </div>
     </>
   );
 };

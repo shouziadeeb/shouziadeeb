@@ -111,7 +111,9 @@ const Address = ({ showAddress, setshowAddress }) => {
                 </div>
                 <div className="right_content">
                   {addr.home && (
-                    <p style={{ fontWeight: "600" }}>{addr.home}</p>
+                    <h2 style={{ fontWeight: "600", color: "black" }}>
+                      {addr.home}
+                    </h2>
                   )}
                   {addr.address && <p>{addr.address}</p>}
                   {addr.door && <p>{addr.door}</p>}

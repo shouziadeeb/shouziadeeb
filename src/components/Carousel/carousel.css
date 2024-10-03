@@ -27,3 +27,65 @@
 .carousel-slide.active {
   opacity: 1;
 }
+.CarouselSecond {
+  display: none;
+}
+/* SECOND CAROUSEL  */
+@media (max-width: 600px) {
+  .CarouselSecond {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .Mycarousel {
+    width: 370px;
+    height: 35vw;
+    overflow: hidden;
+    position: relative;
+    border-radius: 4vw;
+    background: linear-gradient(to right, rgb(128, 79, 0), rgb(236, 171, 66));
+  }
+
+  .Mycarousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+  }
+
+  .carousel-item {
+    min-width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .carousel-item img {
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
+    /* object-fit: cover; */
+  }
+  .carousel_text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+    color: aliceblue;
+  }
+  .carousel_text .para {
+    font-size: 4vw;
+  }
+  .carousel_text .offer {
+    font-weight: 600;
+    font-size: 6vw;
+    color: rgb(255, 219, 255);
+    /* background: linear-gradient(red,white); */
+  }
+  .carousel_text button {
+    font-size: 4vw;
+    border-radius: 4vw;
+    color: brown;
+    background-color: rgb(248, 235, 212);
+  }
+}

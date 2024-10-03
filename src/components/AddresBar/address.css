@@ -1,11 +1,10 @@
 main {
   width: 100%;
   height: 100%;
-
   position: fixed;
   top: 0;
   left: 0;
-  overflow: hidden;
+  overflow: scroll;
   z-index: 11;
   transition: 0.8s;
 }
@@ -98,9 +97,10 @@ input[type="number"]::-webkit-inner-spin-button {
   width: 100%;
   display: flex;
   padding: 2vw;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   flex-wrap: wrap;
+  gap: 2vw;
   color: rgb(52, 51, 51);
 }
 .address_item {
@@ -115,9 +115,8 @@ input[type="number"]::-webkit-inner-spin-button {
   font-size: 1.2vw;
   gap: 1vw;
   position: relative;
-  padding: 1vw;
+  padding: 2vw;
   box-sizing: border-box;
-  margin: 0 25px 25px 0;
 }
 .adddress_on_display::-webkit-scrollbar {
   display: none;
@@ -127,6 +126,9 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 .content_icon {
   width: 10%;
+}
+.right_content p {
+  color: gray;
 }
 .right_content .deliver_button {
   color: #fff;
@@ -153,31 +155,35 @@ input[type="number"]::-webkit-inner-spin-button {
   text-align: center;
   font-size: 1vw;
 }
-
+.location_content span {
+  font-size: 2vw;
+  font-weight: 600;
+  color: black;
+}
 @media (max-width: 600px) {
   .address_div button {
-    font-size: 2.2vw;
+    font-size: 2.4vw;
     padding: 2vw 4vw;
   }
   .right_content .deliver_button {
     border: 0;
     cursor: pointer;
-    font-size: 2vw;
-    padding: 1vw 2vw;
+    font-size: 2.4vw;
+    padding: 1.5vw 2.5vw;
     border-radius: 1px;
   }
   .adddress_on_display {
     display: flex;
     border: 1px solid gainsboro;
     height: 40vw;
-    line-height: 17px;
     width: 60vw;
-    font-size: 2.8vw;
+    font-size: 3.2vw;
     box-sizing: border-box;
     margin-top: 2vw;
   }
   .address_div {
     flex-direction: column;
+    gap: 3vw;
   }
   .address_box form {
     display: flex;
@@ -211,6 +217,12 @@ input[type="number"]::-webkit-inner-spin-button {
     color: aliceblue;
     margin-top: 4vw;
     font-weight: 600;
+    font-size: 3.5vw;
+  }
+  .right_content h2 {
+    font-size: 4vw;
+  }
+  .location_content span {
     font-size: 3.5vw;
   }
 }

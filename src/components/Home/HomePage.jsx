@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import Carousel from "../Carousel/Carousel";
 import FoodList from "../FoodList/FoodList";
 import HeaderMobile from "../HeaderForMobile/HeaderMobile";
+import CarouselSecond from "../Carousel/CarouselSecond";
 
 const HomePage = () => {
   const [filters, setFilters] = useState({
@@ -86,12 +87,17 @@ const HomePage = () => {
         handleSearch={handleSearch}
         handleOffer={handleOffer}
       />
+      <CarouselSecond />
       <Suggest
         foodList={foods}
         handleFilterCatoegory={handleFilterCatoegory}
         isFilterAdded={!!filters.category}
         handlePrice={handlePrice}
       />
+      <div className="hr_tag">
+        <p>WHAT'S ON YOUR MIND</p>
+        <hr />
+      </div>
       <div className="foodList_container">
         <FoodList
           setshowAddress={setshowAddress}
@@ -102,7 +108,10 @@ const HomePage = () => {
           handleCartItemClick={handleCartItemClick}
           cart={cart}
         ></FoodList>
-        <hr />
+        <div className="hr_tag">
+          <p>DID YOU ENJOY..?</p>
+          <hr />
+        </div>
       </div>
       <Carousel />
       <Footer />
