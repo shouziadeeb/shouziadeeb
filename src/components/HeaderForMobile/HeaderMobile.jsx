@@ -2,8 +2,10 @@ import React from "react";
 import "./headerMobile.css";
 import { FaUserCircle, FaLocationArrow } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 const HeaderMobile = ({ handleSearch, searchValue }) => {
+  const navigate = useNavigate();
   const item = "pizza";
   return (
     <div className="header">
@@ -12,7 +14,7 @@ const HeaderMobile = ({ handleSearch, searchValue }) => {
           <p>
             <FaLocationArrow /> Amroha
           </p>
-          <div className="user_icon">
+          <div className="user_icon" onClick={() => navigate("/login")}>
             <FaUserCircle />
           </div>
         </div>

@@ -39,7 +39,6 @@ const Address = ({ showAddress, setshowAddress }) => {
     console.log(obj);
   };
 
-  console.log(address);
   return (
     <main>
       <div className="my_container">

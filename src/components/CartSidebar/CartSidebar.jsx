@@ -58,7 +58,6 @@ const CartSidebar = ({
   const handleEmailSidebar = () => {
     setSignInSidebar(true);
   };
-  console.log(showCart);
 
   return (
     <div className="cart_sidebar" style={{ width: Cartwidth }}>

@@ -1,0 +1,50 @@
+.sigIn_sidebar1 {
+  height: 80vh;
+  width: 100vw;
+  background-color: white;
+  z-index: 5;
+  transition: 0.8s;
+}
+.signIn_page1 {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2vw;
+}
+.signIn_page1 form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.signIn_page1 form input {
+  width: 100%;
+  height: 18vw;
+  padding-left: 5vw;
+  outline: none;
+  font-size: 6vw;
+  border: 0.1px solid gainsboro;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.signIn_page1 button {
+  width: 100%;
+  height: 18vw;  
+  border: none;
+  background: coral;
+  color: aliceblue;
+  font-size: 7vw;
+}
+/* .text1 {
+  width: 60%;
+} */

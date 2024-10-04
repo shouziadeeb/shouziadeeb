@@ -9,6 +9,7 @@ import Carousel from "../Carousel/Carousel";
 import FoodList from "../FoodList/FoodList";
 import HeaderMobile from "../HeaderForMobile/HeaderMobile";
 import CarouselSecond from "../Carousel/CarouselSecond";
+import { LogInMobile } from "../SignIn/LogInMobile";
 
 const HomePage = () => {
   const [filters, setFilters] = useState({
@@ -80,6 +81,7 @@ const HomePage = () => {
   return (
     <>
       <HeaderMobile handleSearch={handleSearch} searchValue={filters.search} />
+
       <Header
         badgeCounter={cartData.length}
         setSidebar={setShowCart}
