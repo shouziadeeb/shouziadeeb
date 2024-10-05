@@ -121,12 +121,12 @@ button {
     transition: 0.3s;
   }
   .card_text {
-    width: 45%;
+    width: 40%;
     /* background-color: aqua; */
-    font-size: 3.9vw;
+    font-size: 4.4vw;
     display: flex;
     flex-direction: column;
-    gap: 2vw;
+    gap: 1vw;
     padding-left: 2vw;
   }
   .btn {
@@ -141,8 +141,8 @@ button {
     border-radius: 1vw;
   }
   .food_card img {
-    width: 20vw;
-    height: 20vw;
+    width: 24vw;
+    height: 24vw;
     border-radius: 5%;
     transition: 0.9s;
   }

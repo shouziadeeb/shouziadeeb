@@ -9,9 +9,9 @@
   justify-content: center;
   align-items: center;
   gap: 1vw;
-  color: rgb(52, 52, 52);  
-  background-color: #adb4c0;
-  box-shadow: 1px 10px 50px;
+  color: rgb(52, 52, 52);
+  background: rgb(240, 240, 245);
+  /* box-shadow: 1px 10px 50px; */
   margin-bottom: -2vw;
 }
 .sigIn_sidebar1 .text_info {
@@ -34,7 +34,6 @@
   align-items: center;
   flex-direction: column;
   gap: 2vw;
-  background-color: #adb4c0;
 }
 .signIn_page1 form {
   display: flex;
@@ -42,7 +41,6 @@
   justify-content: center;
   align-items: center;
   width: 60%;
-  background-color: #adb4c0;
 }
 .signIn_page1 form input {
   width: 100%;
@@ -53,7 +51,6 @@
   font-size: 2vw;
   border: none;
   border-bottom: 1px solid;
-  background-color: #adb4c0;
 }
 input[type="number"] ::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -92,7 +89,7 @@ input[type="number"]::-webkit-inner-spin-button {
     align-items: center;
     flex-direction: column;
     gap: 2vw;
-    background-color: #adb4c0;
+    background: rgb(240, 240, 245);
   }
   .signIn_page1 form {
     display: flex;
@@ -100,7 +97,7 @@ input[type="number"]::-webkit-inner-spin-button {
     justify-content: center;
     align-items: center;
     width: 80%;
-    background-color: #adb4c0;
+    background: rgb(240, 240, 245);
   }
   .signIn_page1 form input {
     width: 100%;
@@ -111,7 +108,7 @@ input[type="number"]::-webkit-inner-spin-button {
     font-size: 6vw;
     border: none;
     border-bottom: 1px solid;
-    background-color: #adb4c0;
+    background: rgb(240, 240, 245);
   }
   .signIn_page1 button {
     width: 100%;
