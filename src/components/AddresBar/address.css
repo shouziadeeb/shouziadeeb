@@ -130,21 +130,22 @@ input[type="number"]::-webkit-inner-spin-button {
 .right_content p {
   color: gray;
 }
-.right_content .deliver_button {
-  color: #fff;
-  text-transform: uppercase;
+.right_content .deliver_and_delete_button {
+  width: 100%;
+  position: absolute;
+  bottom: 2.5vw;
+  left: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+.right_content .deliver_and_delete_button button {
   background: #60b246;
+  color: #fff;
   cursor: pointer;
   font-weight: 600;
   text-align: center;
-  font-size: 1vw;
-  padding: 1vw 2vw;
-  position: absolute;
-  bottom: 2.5vw;
-  left: 50%;
-  transform: translate(-50%);
 }
-.address_div button {
+/* .address_div button {
   padding: 1vw;
   text-transform: uppercase;
   color: #60b246;
@@ -154,7 +155,7 @@ input[type="number"]::-webkit-inner-spin-button {
   background: none;
   text-align: center;
   font-size: 1vw;
-}
+} */
 .location_content span {
   font-size: 2vw;
   font-weight: 600;

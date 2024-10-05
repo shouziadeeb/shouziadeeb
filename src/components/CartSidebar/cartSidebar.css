@@ -130,10 +130,22 @@
   justify-content: center;
   gap: 0.4vw;
 }
-
+@media (max-width: 1024px) {
+  .cart_sidebar nav button {
+    display: flex;
+    font-size: 2.2vw;
+    height: 4vw;
+    width: 14vw;
+    border-radius: 0.2vw;
+    background: white;
+    border: none;
+    justify-content: center;
+    gap: 0.4vw;
+  }
+}
 @media (max-width: 600px) {
   .cart_sidebar {
-    background-color:white ;
+    background-color: white;
   }
   .sidebar_div {
     font-size: 4.5vw;
@@ -177,5 +189,16 @@
   .to_close_cart {
     display: block;
     font-size: 7vw;
+  }
+  .cart_sidebar nav button {
+    display: flex;
+    font-size: 4.2vw;
+    height: 8vw;
+    width: 24vw;
+    border-radius: 0.2vw;
+    background: white;
+    border: none;
+    justify-content: center;
+    gap: 0.4vw;
   }
 }

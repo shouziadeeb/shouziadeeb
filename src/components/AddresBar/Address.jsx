@@ -1,12 +1,17 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./address.css";
 import { IoHomeOutline } from "react-icons/io5";
 import { PiSuitcaseSimpleThin } from "react-icons/pi";
 import { IoMdClose } from "react-icons/io";
+import { json } from "react-router-dom";
 const Address = ({ showAddress, setshowAddress }) => {
   const [showForm, setShowForm] = useState(false);
-  const [address, setAddress] = useState([]);
+  // const [address, setAddress] = useState([]);
   const [selectedType, setSelectedType] = useState(null);
+  const [storedUser, setStoredUser] = useState(() => {
+    const storedAddress = localStorage.getItem("storedAddress");
+    return storedAddress ? JSON.parse(storedAddress) : [];
+  });
   const addressRef = useRef();
   const doorRef = useRef();
   const landmarkRef = useRef();
@@ -16,15 +21,15 @@ const Address = ({ showAddress, setshowAddress }) => {
     const doorValue = doorRef.current.value;
     const landmarkValue = landmarkRef.current.value;
 
-    setAddress((prev) => [
-      ...prev, // Keep the previous addresses
-      {
-        home: selectedType,
-        address: addressValue, // Add new address object
-        door: doorValue,
-        landmark: landmarkValue,
-      },
-    ]);
+    const to_storeAddress = {
+      home: selectedType,
+      address: addressValue,
+      door: doorValue,
+      landmark: landmarkValue,
+    };
+
+    setStoredUser((prev) => [...prev, to_storeAddress]);
+
     addressRef.current.value = "";
     doorRef.current.value = "";
     landmarkRef.current.value = "";
@@ -34,11 +39,20 @@ const Address = ({ showAddress, setshowAddress }) => {
     setShowForm(true);
   };
 
-  const handleLocation = (e) => {};
   const handlePayment = (obj) => {
     console.log(obj);
   };
 
+  const handleFilterAddress = (value) => {
+    const filteredAddress = storedUser.filter(
+      (item) => item.door !== value.door
+    );
+    setStoredUser(filteredAddress);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("storedAddress", JSON.stringify(storedUser));
+  }, [storedUser]);
   return (
     <main>
       <div className="my_container">
@@ -89,10 +103,10 @@ const Address = ({ showAddress, setshowAddress }) => {
         </div>
 
         <div className="address_div">
-          {address.map((addr, index) => {
+          {storedUser.map((addr, index) => {
             return (
-              <div className="adddress_on_display">
-                <div key={index} className="content_icon">
+              <div className="adddress_on_display" key={index}>
+                <div className="content_icon">
                   {addr.home && (
                     <div className="location_content">
                       {addr.home === "HOME" && (
@@ -117,12 +131,18 @@ const Address = ({ showAddress, setshowAddress }) => {
                   {addr.address && <p>{addr.address}</p>}
                   {addr.door && <p>{addr.door}</p>}
                   {addr.landmark && <p>{addr.landmark}</p>}
-                  <button
-                    className="deliver_button"
-                    onClick={() => handlePayment(addr)}
-                  >
-                    DELIVER HERE
-                  </button>
+                  <div className="deliver_and_delete_button">
+                    <button onClick={() => handlePayment(addr)}>
+                      DELIVER HERE
+                    </button>
+                    <button
+                      className="delete_button"
+                      onClick={() => handleFilterAddress(addr)}
+                      style={{ background: "red" }}
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </div>
               </div>
             );
