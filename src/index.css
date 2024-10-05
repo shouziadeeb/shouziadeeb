@@ -2,11 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* border: 1px solid; */
   font-family: sans-serif;
 }
 .hr_tag {
   width: 100%;
-  height: 7vh;
+  height: 7vh; 
   align-items: center;
   display: flex;
   gap: 3vw;

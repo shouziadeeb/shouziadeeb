@@ -52,7 +52,6 @@ const Suggest = ({
               className="dropdown_box"
               style={{
                 display: state && "block",
-                height: state && "7.1vw",
               }}
             >
               {priceArr.map((item, index) => (

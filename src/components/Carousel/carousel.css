@@ -31,10 +31,12 @@
 /* SECOND  */
 
 .CarouselSecond {
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 1vw;
+  overflow: hidden;
+
 }
 .Mycarousel {
   width: 75%;
@@ -64,7 +66,6 @@
   width: 30vw;
   height: 20vw;
   border-radius: 5%;
-  /* object-fit: cover; */
 }
 .carousel_text {
   display: flex;
@@ -79,7 +80,6 @@
   font-weight: 600;
   font-size: 3.5vw;
   color: rgb(255, 219, 255);
-  /* background: linear-gradient(red,white); */
 }
 .carousel_text button {
   font-size: 2vw;
@@ -88,20 +88,10 @@
   color: brown;
   background-color: rgb(248, 235, 212);
 }
-.logo_img {
-  position: absolute;
-  width: 10vw;
-  top: 0;
-  left: 2vw;
-}
-.logo_img img {
-  position: absolute;
-  width: 5vw;
-  height: 5vw;
-}
+/* */
 @media (max-width: 600px) {
   .CarouselSecond {
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
   }

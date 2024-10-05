@@ -4,34 +4,58 @@
   background-color: white;
   z-index: 5;
   transition: 0.8s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+  color: rgb(52, 52, 52);  
+  background-color: #adb4c0;
+  box-shadow: 1px 10px 50px;
+  margin-bottom: -2vw;
+}
+.sigIn_sidebar1 .text_info {
+  width: 60%;
+  /* margin-top: 10vw; */
+  font-size: 2vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vw;
+  padding: 2vw;
+}
+.sigIn_sidebar1 .text_info p {
+  font-size: 1.5vw;
 }
 .signIn_page1 {
   width: 100%;
-  height: 100%;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 2vw;
+  background-color: #adb4c0;
 }
 .signIn_page1 form {
   display: flex;
-  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 60%;
+  background-color: #adb4c0;
 }
 .signIn_page1 form input {
   width: 100%;
-  height: 18vw;
-  padding-left: 5vw;
+  height: 4vw;
+  padding-left: 2vw;
   outline: none;
-  font-size: 6vw;
-  border: 0.1px solid gainsboro;
+  color: black;
+  font-size: 2vw;
+  border: none;
+  border-bottom: 1px solid;
+  background-color: #adb4c0;
 }
-input[type="number"]::-webkit-outer-spin-button,
+input[type="number"] ::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
@@ -39,12 +63,63 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .signIn_page1 button {
   width: 100%;
-  height: 18vw;  
+  height: 4vw;
   border: none;
-  background: coral;
+  background: #1a1d24;
   color: aliceblue;
-  font-size: 7vw;
+  font-size: 2vw;
+  margin-top: 5vw;
 }
-/* .text1 {
-  width: 60%;
-} */
+
+@media (max-width: 600px) {
+  .sigIn_sidebar1 .text_info {
+    width: 80%;
+    /* margin-top: 10vw; */
+    font-size: 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    padding: 2vw;
+  }
+  .sigIn_sidebar1 .text_info p {
+    font-size: 4vw;
+  }
+  .signIn_page1 {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vw;
+    background-color: #adb4c0;
+  }
+  .signIn_page1 form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    background-color: #adb4c0;
+  }
+  .signIn_page1 form input {
+    width: 100%;
+    height: 12vw;
+    padding-left: 5vw;
+    outline: none;
+    color: black;
+    font-size: 6vw;
+    border: none;
+    border-bottom: 1px solid;
+    background-color: #adb4c0;
+  }
+  .signIn_page1 button {
+    width: 100%;
+    height: 12vw;
+    border: none;
+    background: #1a1d24;
+    color: aliceblue;
+    font-size: 4vw;
+    margin-top: 10vw;
+  }
+}

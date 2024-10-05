@@ -75,9 +75,12 @@
 }
 .dropdown_box {
   position: absolute;
-  right: 0;
-  background-color: white;
-  width: 10vw;
+  left: 10px;
+  top: 1.7vw;
+  background: rgb(255, 248, 248);
+  width: 12vw;
+  /* height: 10vw; */
+  padding: 1vw;
   margin-top: 1vw;
   margin-left: 4vw;
   display: none;
@@ -88,6 +91,8 @@
   border-bottom: 0.1vw solid gray;
   text-align: center;
   transition: 0.5s;
+  z-index: 1;
+  font-size: 2vw;
 }
 
 @media (max-width: 600px) {
@@ -107,16 +112,14 @@
   }
   .dropdown_box {
     position: absolute;
-    right: 0;
-    background-color: white;
     width: 20vw;
-    height: auto;
+    top: 3.4vw;
     margin-top: 1vw;
     margin-left: 8vw;
     display: none;
     transition: 0.5s;
     z-index: 111;
-  }
+  } 
   .filter_price {
     font-size: 3vw;
   }
@@ -128,11 +131,18 @@
     border-radius: 0.4vw;
     cursor: pointer;
     /* display: none; */
-  }
+  } 
   .filter_btn_div {
     display: flex;
     width: 80%;
     justify-content: space-between;
     margin-top: 2vw;
+  }
+  .dropdown_box p {
+    border-bottom: 0.1vw solid gray;
+    text-align: center;
+    transition: 0.5s;
+    z-index: 1;
+    font-size: 4vw;
   }
 }
