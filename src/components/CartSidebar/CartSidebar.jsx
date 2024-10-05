@@ -17,6 +17,7 @@ const CartSidebar = ({
   setshowAddress,
 }) => {
   const [allPrice, setAllPrice] = useState(0);
+  const [Alltotal, setAllTotal] = useState(0);
   const { user, setUser, logout } = useUser();
   const [sigInSidebar, setSignInSidebar] = useState(false);
 
@@ -44,6 +45,14 @@ const CartSidebar = ({
     );
     setAllPrice(total);
   }, [cartData]);
+
+  useEffect(() => {
+    if (cartData.length > 0) {
+      const subTotal = Math.floor((allPrice * 5) / 100 + allPrice + 6 + 40);
+      setAllTotal(subTotal);
+    }
+    if (allPrice === 0) setAllTotal(0);
+  }, [allPrice]);
 
   const hanldeBuyItemButton = () => {
     if (user && cartData.length > 0) {
@@ -136,11 +145,35 @@ const CartSidebar = ({
           <p>No items here</p>
         )}
       </div>
+      <div className="billing">
+        <div className="tax_and_delivery">
+          <h4>Bill Details</h4>
+          <div className="bill_details">
+            <div style={{ fontWeight: "600" }}>
+              <p>Item Total</p>
+              <span>₹{allPrice}</span>
+            </div>
+            <div>
+              <p>Deliver Fee</p>
+              <span>₹{cartData.length > 0 ? "40.00" : "0"}</span>
+            </div>
+            <div>
+              <p>GST</p>
+              <span>₹{(allPrice * 5) / 100}</span>
+            </div>
+            <div>
+              <p>Platform Fee</p>
+              <span>₹{cartData.length > 0 ? "6.00" : "0"}</span>
+            </div>
+          </div>
+        </div>
+        <hr />
+      </div>
       <div className="sub_total">
         <div className="total_price_and_btn">
           <button onClick={hanldeBuyItemButton}>Buy now</button>
           <p>
-            Total ₹<span>{allPrice}</span>
+            Total ₹<span>{Alltotal}</span>
           </p>
         </div>
       </div>

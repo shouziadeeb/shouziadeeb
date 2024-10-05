@@ -144,18 +144,9 @@ input[type="number"]::-webkit-inner-spin-button {
   cursor: pointer;
   font-weight: 600;
   text-align: center;
+  font-size: 1.3vw;
+  padding: 0.5vw 1.5vw;
 }
-/* .address_div button {
-  padding: 1vw;
-  text-transform: uppercase;
-  color: #60b246;
-  border: 1px solid #60b246;
-  cursor: pointer;
-  font-weight: 600;
-  background: none;
-  text-align: center;
-  font-size: 1vw;
-} */
 .location_content span {
   font-size: 2vw;
   font-weight: 600;
@@ -165,13 +156,6 @@ input[type="number"]::-webkit-inner-spin-button {
   .address_div button {
     font-size: 2.4vw;
     padding: 2vw 4vw;
-  }
-  .right_content .deliver_button {
-    border: 0;
-    cursor: pointer;
-    font-size: 2.4vw;
-    padding: 1.5vw 2.5vw;
-    border-radius: 1px;
   }
   .adddress_on_display {
     display: flex;
@@ -225,5 +209,14 @@ input[type="number"]::-webkit-inner-spin-button {
   }
   .location_content span {
     font-size: 3.5vw;
+  }
+  .right_content .deliver_and_delete_button button {
+    background: #60b246;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+    font-size: 3.5vw;
+    padding: 1.5vw 2.5vw;
   }
 }
