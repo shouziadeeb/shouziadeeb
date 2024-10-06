@@ -1,7 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Outlet } from "react-router-dom";
 import "./address.css";
 import { IoHomeOutline } from "react-icons/io5";
 import { PiSuitcaseSimpleThin } from "react-icons/pi";
+import { Link } from "react-router-dom";
+
 import { IoMdClose } from "react-icons/io";
 import { json } from "react-router-dom";
 const Address = ({ showAddress, setshowAddress }) => {
@@ -132,9 +135,11 @@ const Address = ({ showAddress, setshowAddress }) => {
                   {addr.door && <p>{addr.door}</p>}
                   {addr.landmark && <p>{addr.landmark}</p>}
                   <div className="deliver_and_delete_button">
-                    <button onClick={() => handlePayment(addr)}>
-                      DELIVER HERE
-                    </button>
+                    <Link to="/pay">
+                      <button onClick={() => handlePayment(addr)}>
+                        DELIVER HERE
+                      </button>
+                    </Link>
                     <button
                       className="delete_button"
                       onClick={() => handleFilterAddress(addr)}
@@ -150,6 +155,7 @@ const Address = ({ showAddress, setshowAddress }) => {
           <button onClick={handleFormDisplay}>+ ADD NEW ADDRESS</button>
         </div>
       </div>
+      <Outlet />
     </main>
   );
 };

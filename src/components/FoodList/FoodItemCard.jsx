@@ -1,6 +1,6 @@
 import "./foodCard.css";
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../store/redux";
 
 export function FoodItemCard({
@@ -8,6 +8,8 @@ export function FoodItemCard({
   handleCartItemClick,
   isAlreadyInCart,
 }) {
+  const cartData = useSelector((state) => state.cartList.items);
+
   const dispatch = useDispatch();
 
   const addNewCart = (payload) => {
@@ -20,7 +22,7 @@ export function FoodItemCard({
       <div className="card_text">
         <h4>{foodItem.name} </h4>
         <p>{foodItem.content} </p>
-      </div> 
+      </div>
       <div className="btn">
         <p>
           ₹<span>{foodItem.price}.00</span>

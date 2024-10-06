@@ -13,7 +13,7 @@ const FoodList = ({
   setCart,
   setshowAddress,
 }) => {
-  const cartData = useSelector((state) => state.cartList);
+  const cartData = useSelector((state) => state.cartList.items);
   return (
     <>
       <section className="card_section">
@@ -37,6 +37,8 @@ const FoodList = ({
             key={foodItem.id}
             handleCartItemClick={handleCartItemClick}
             isAlreadyInCart={
+              cartData &&
+              cartData.length > 0 &&
               !!cartData.find((cartItem) => cartItem.name === foodItem.name)
             }
           />

@@ -1,47 +1,51 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const cart = createSlice(
-  {
+export const cart = createSlice({
   name: "vary",
-  initialState: [],
+  initialState: {
+    items: [], // Store the items in the cart
+    AllTotal: 0, // Initialize total price
+  },
   reducers: {
     addToCart(state, action) {
-      state.push(action.payload);
+      const newItem = action.payload;
+      if (Array.isArray(newItem) && newItem.length === 0) {
+        // state.items.push(newItem);
+        state.items = [];
+      } else {
+        state.items.push(newItem);
+      }
       console.log(action.payload);
     },
     handleQuantity(state, action) {
       const { item, number } = action.payload;
-
-      // Find the index of the item to update
-      const itemIndex = state.findIndex(
+      const itemIndex = state.items.findIndex(
         (cartItem) => cartItem.name === item.name
       );
 
-      // Check if the item exists in the cart
       if (itemIndex !== -1) {
-        const updatedItem = {
-          ...state[itemIndex],
-          qty: state[itemIndex].qty + number,
-        };
+        const currentItem = state.items[itemIndex];
+        const newQuantity = currentItem.qty + number;
 
-        // If the updated quantity is less than 1, remove the item from the cart
-        if (updatedItem.qty < 1) {
-          return state.filter((cartItem) => cartItem.name !== item.name); 
+        if (newQuantity < 1) {
+          // Correctly remove the item from the array
+          state.items.splice(itemIndex, 1); // Mutates the array directly
+        } else {
+          // Update the quantity and total price
+          currentItem.qty = newQuantity;
+          currentItem.totalPrice =
+            parseInt(currentItem.price) * currentItem.qty;
+
+          // Update the state with the modified item
+          state.items[itemIndex] = currentItem;
         }
-
-        // Update the total price
-        if (number > 0) {
-          updatedItem.totalPrice = parseInt(item.price) * updatedItem.qty;
-        } else if (number < 0) {
-          updatedItem.totalPrice -= parseInt(item.price);
-        }
-
-        // Update the cart with the modified item
-        state[itemIndex] = updatedItem;
+        console.log(action.payload);
       }
-
-     
+    },
+    handleAllTotalPrice(state, action) {
+      state.AllTotal = action.payload;
     },
   },
-  });
-export const { addToCart, handleQuantity } = cart.actions;
+});
+
+export const { addToCart, handleQuantity, handleAllTotalPrice } = cart.actions;

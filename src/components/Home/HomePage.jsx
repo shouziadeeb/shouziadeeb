@@ -9,8 +9,7 @@ import Carousel from "../Carousel/Carousel";
 import FoodList from "../FoodList/FoodList";
 import HeaderMobile from "../HeaderForMobile/HeaderMobile";
 import CarouselSecond from "../Carousel/CarouselSecond";
-import { LogInMobile } from "../SignIn/LogInMobile";
-
+length;
 const HomePage = () => {
   const [filters, setFilters] = useState({
     search: "",
@@ -20,11 +19,10 @@ const HomePage = () => {
   });
   const [showCart, setShowCart] = useState(false);
   const [cart, setCart] = useState([]);
-  const [showAddress, setshowAddress] = useState(false);
   const handleSearch = (value) => {
     setFilters((prev) => ({ ...prev, search: value }));
   };
-  const cartData = useSelector((state) => state.cartList);
+  const cartData = useSelector((state) => state.cartList.items);
   const handleFilterCatoegory = (value) => {
     setFilters((prev) => ({
       ...prev,
@@ -83,7 +81,7 @@ const HomePage = () => {
       <HeaderMobile handleSearch={handleSearch} searchValue={filters.search} />
 
       <Header
-        badgeCounter={cartData.length}
+        badgeCounter={cartData && cartData.length}
         setSidebar={setShowCart}
         searchValue={filters.search}
         handleSearch={handleSearch}
@@ -102,7 +100,6 @@ const HomePage = () => {
       </div>
       <div className="foodList_container">
         <FoodList
-          setshowAddress={setshowAddress}
           showCart={showCart}
           setShowCart={setShowCart}
           setCart={setCart}
@@ -119,12 +116,17 @@ const HomePage = () => {
       <Footer />
       <div
         className="cart_mobile"
-        style={{ display: cartData.length > 0 ? "block" : "none" }}
+        style={{
+          display:
+            cartData && cartData.length > 0 && window.innerWidth < 600
+              ? "block"
+              : "none",
+        }}
       >
         <div className="for_mobileCart">
           <p>
-            <span>{cartData.length}</span>
-            {cartData.length > 1 ? " Items" : " Item"} Added
+            <span>{cartData && cartData.length}</span>
+            {cartData && cartData.length > 1 ? " Items" : " Item"} Added
           </p>
           <p
             style={{

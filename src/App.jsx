@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import HomePage from "./components/Home/HomePage";
 import {
   createBrowserRouter,
+  Outlet,
   RouterProvider,
   useLocation,
   useNavigation,
@@ -13,6 +14,7 @@ import {
 import Help from "./components/Help/Help";
 import { LogInMobile } from "./components/SignIn/LogInMobile";
 import Loader from "./components/Loder/Loader";
+import Payment from "./components/Payment/Payment";
 
 // Layout component to handle loading
 const Layout = ({ children }) => {
@@ -33,7 +35,7 @@ const Layout = ({ children }) => {
   return (
     <>
       {loading && <Loader />}
-      {!loading && <div>{children}</div>}
+      {!loading && <div> {children}</div>}
     </>
   );
 };
@@ -53,6 +55,24 @@ function App() {
       element: (
         <Layout>
           <Address />
+        </Layout>
+      ),
+      // children: [
+      //   {
+      //     path: "pay",
+      //     element: (
+      //       <Layout>
+      //         <Payment />
+      //       </Layout>
+      //     ),
+      //   },
+      // ],
+    },
+    {
+      path: "/pay",
+      element: (
+        <Layout>
+          <Payment />
         </Layout>
       ),
     },

@@ -6,22 +6,16 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { useUser } from "../../hooks/useUser";
 import { SignIn } from "../SignIn/SignIn";
 import "./cartSidebar.css";
-import { handleQuantity } from "../../store/redux";
+import { handleQuantity, handleAllTotalPrice } from "../../store/redux";
 import { useNavigate } from "react-router-dom";
 
-const CartSidebar = ({
-  showCart,
-  setShowCart,
-  cart,
-  setCart,
-  setshowAddress,
-}) => {
+const CartSidebar = ({ showCart, setShowCart }) => {
   const [allPrice, setAllPrice] = useState(0);
   const [Alltotal, setAllTotal] = useState(0);
   const { user, setUser, logout } = useUser();
   const [sigInSidebar, setSignInSidebar] = useState(false);
 
-  const cartData = useSelector((state) => state.cartList);
+  const cartData = useSelector((state) => state.cartList.items);
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -39,26 +33,26 @@ const CartSidebar = ({
   };
 
   useEffect(() => {
-    const total = cartData.reduce(
-      (acc, curValue) => acc + Number(curValue.totalPrice),
-      0
-    );
+    const total =
+      cartData &&
+      cartData.length > 0 &&
+      cartData.reduce((acc, curValue) => acc + Number(curValue.totalPrice), 0);
     setAllPrice(total);
   }, [cartData]);
 
   useEffect(() => {
-    if (cartData.length > 0) {
+    if (cartData && cartData.length > 0) {
       const subTotal = Math.floor((allPrice * 5) / 100 + allPrice + 6 + 40);
       setAllTotal(subTotal);
     }
-    if (allPrice === 0) setAllTotal(0);
+    if (!allPrice) setAllTotal(0);
   }, [allPrice]);
 
   const hanldeBuyItemButton = () => {
-    if (user && cartData.length > 0) {
+    if (user && cartData && cartData.length > 0) {
       navigate("/address");
     } else {
-      if (cartData.length < 1) alert("Please add item in cart");
+      if (cartData && cartData.length < 1) alert("Please add item in cart");
       else {
         alert("sign in fisrt");
       }
@@ -68,6 +62,11 @@ const CartSidebar = ({
     setSignInSidebar(true);
   };
 
+  useEffect(() => {
+    dispatch(handleAllTotalPrice(Alltotal));
+  }, [Alltotal]);
+
+  console.log();
   return (
     <div className="cart_sidebar" style={{ width: Cartwidth }}>
       <nav>
@@ -151,19 +150,19 @@ const CartSidebar = ({
           <div className="bill_details">
             <div style={{ fontWeight: "600" }}>
               <p>Item Total</p>
-              <span>₹{allPrice}</span>
+              <span>₹{allPrice ? allPrice : 0}</span>
             </div>
             <div>
               <p>Deliver Fee</p>
-              <span>₹{cartData.length > 0 ? "40.00" : "0"}</span>
+              <span>₹{cartData && cartData.length > 0 ? "40.00" : "0"}</span>
             </div>
             <div>
               <p>GST</p>
-              <span>₹{(allPrice * 5) / 100}</span>
+              <span>₹{allPrice ? (allPrice * 5) / 100 : 0}</span>
             </div>
             <div>
               <p>Platform Fee</p>
-              <span>₹{cartData.length > 0 ? "6.00" : "0"}</span>
+              <span>₹{cartData && cartData.length > 0 ? "6.00" : "0"}</span>
             </div>
           </div>
         </div>
