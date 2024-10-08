@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./suggest.css";
 import { RiArrowDropDownFill } from "react-icons/ri";
 import Skeleton from "react-loading-skeleton";
@@ -11,28 +11,52 @@ const Suggest = ({
   handlePrice,
 }) => {
   const [state, setState] = useState(false);
-  const [isLoading, setisLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // Add isLoading state
   const priceArr = [
     { range: "49 - 149", max: 149, min: 49 },
     { range: "150 - 249", max: 249, min: 149 },
     { range: "250 - 349", max: 349, min: 249 },
     { range: "350 - 500", max: 449, min: 349 },
   ];
+
+  // Simulate loading with useEffect (you can replace this with actual API logic)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false); // Set isLoading to false after 2 seconds
+    }, 2000);
+    return () => clearTimeout(timer); // Cleanup timer on unmount
+  }, []);
+
   return (
     <>
       <section className="suggestion_section">
         <div className="food_boxes">
           {foodList?.map((foodItem) => {
+            // Display skeleton while loading
             if (foodItem.unique)
               return isLoading ? (
-                <Skeleton width={100} height={100} borderRadius={50} />
+                <div className="box" key={foodItem.id}>
+                  {/* Responsive Skeleton Loader */}
+                  <Skeleton
+                    width={"8vw"} // Adjust skeleton size to match the box size
+                    height={"8vw"}
+                    style={{
+                      borderRadius: "50%", // Circular skeleton for the image
+                    }}
+                  />
+                  <Skeleton
+                    width={"80%"} // Responsive text skeleton width
+                    height={"1.5vw"}
+                    style={{ margin: "1vw 0" }}
+                  />
+                </div>
               ) : (
                 <div
                   className="box"
                   onClick={() => handleFilterCatoegory(foodItem.unique)}
                   key={foodItem.id}
                 >
-                  <img src={foodItem.img} />
+                  <img src={foodItem.img} alt={foodItem.unique} />
                   <p>{foodItem.unique}</p>
                 </div>
               );
@@ -54,11 +78,22 @@ const Suggest = ({
                 display: state && "block",
               }}
             >
-              {priceArr.map((item, index) => (
-                <p key={index} onClick={() => handlePrice(item.min, item.max)}>
-                  {item.range}
-                </p>
-              ))}
+              {priceArr.map((item, index) =>
+                isLoading ? (
+                  <Skeleton
+                    width={"100%"} // Responsive dropdown skeleton
+                    height={"2vw"}
+                    key={index}
+                  />
+                ) : (
+                  <p
+                    key={index}
+                    onClick={() => handlePrice(item.min, item.max)}
+                  >
+                    {item.range}
+                  </p>
+                )
+              )}
             </div>
           </div>
           <div className="all_items" onClick={() => handleFilterCatoegory("")}>
