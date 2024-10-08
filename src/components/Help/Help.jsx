@@ -4,7 +4,6 @@ import Loader from "../Loder/Loader";
 const Help = () => {
   return (
     <>
-      <Loader />
       <div style={styles.container}>
         <h1 style={styles.heading}>Help & Support</h1>
         <p style={styles.subheading}>

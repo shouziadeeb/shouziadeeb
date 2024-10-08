@@ -63,15 +63,16 @@
   position: relative;
   font-size: 1.4vw;
   border: 1px solid gray;
-  padding: 0.5vw 1vw;
+  padding: 0.5vw 1.4vw;
   border-radius: 0.4vw;
   cursor: pointer;
+  background-color: black;
+  color: aliceblue;
 }
 .dropown {
   position: relative;
   display: flex;
   align-items: center;
-  margin-left: 2vw;
 }
 .dropdown_box {
   position: absolute;
@@ -79,13 +80,13 @@
   top: 1.7vw;
   background: rgb(255, 248, 248);
   width: 12vw;
-  /* height: 10vw; */
   padding: 1vw;
   margin-top: 1vw;
   margin-left: 4vw;
   display: none;
   transition: 0.5s;
   z-index: 111;
+  color: black;
 }
 .dropdown_box p {
   border-bottom: 0.1vw solid gray;
@@ -94,44 +95,64 @@
   z-index: 1;
   font-size: 2vw;
 }
+.active {
+  scale: 125%;
+  transition: 0.3s;
+  color: black;
+}
+.imgactive {
+  border-radius: 1px;
+}
 
 @media (max-width: 600px) {
   .suggestion_section {
     width: 100%;
-    height: 30vw;
+    height: 40vw;
     display: flex;
     justify-content: center;
     position: relative;
   }
   .box img {
-    width: 11vw;
-    height: 11vw;
+    width: 15vw;
+    height: 15vw;
     border-radius: 50%;
     box-shadow: 1px 1px 8px;
     cursor: pointer;
   }
+  .food_boxes{
+    height: 70vw;
+  }
+  .food_boxes .box {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    text-align: center;
+    font-size: 3vw;
+  }
   .dropdown_box {
     position: absolute;
     width: 20vw;
-    top: 3.4vw;
+    top: 4.9vw;
     margin-top: 1vw;
     margin-left: 8vw;
     display: none;
     transition: 0.5s;
     z-index: 111;
-  } 
+  }
   .filter_price {
-    font-size: 3vw;
+    font-size: 4vw;
+    padding: 1vw 2vw;
+    border-radius: 1vw;
   }
   .all_items {
     right: 5.5vw;
-    font-size: 3vw;
+    font-size: 3.5vw;
     border: 1px solid gray;
-    padding: 0.5vw 1vw;
+    padding: 0.8vw 1.5vw;
     border-radius: 0.4vw;
     cursor: pointer;
     /* display: none; */
-  } 
+  }
   .filter_btn_div {
     display: flex;
     width: 80%;

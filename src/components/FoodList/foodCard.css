@@ -99,6 +99,19 @@ button {
   background: rgba(0, 0, 0, 0.555);
   z-index: 33333;
 }
+/* .no_item_found {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2vw;
+  font-size: 2vw;
+}
+.no_item_found img {
+  width: 30vw;
+} */
 
 @media (max-width: 600px) {
   .card_section {
@@ -146,4 +159,10 @@ button {
     border-radius: 5%;
     transition: 0.9s;
   }
+  /* .no_item_found {
+    font-size: 5vw;
+  }
+  .no_item_found img {
+    width: 70vw;
+  } */
 }

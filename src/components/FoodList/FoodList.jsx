@@ -31,7 +31,7 @@ const FoodList = ({
           setCart={setCart}
           setshowAddress={setshowAddress}
         />
-        {foodList?.map((foodItem) => (
+        {foodList.map((foodItem) => (
           <FoodItemCard
             foodItem={foodItem}
             key={foodItem.id}
@@ -43,6 +43,15 @@ const FoodList = ({
             }
           />
         ))}
+        {/* {foodList.length === 0 && (
+          <div className="no_item_found">
+            <img
+              src="https://cdni.iconscout.com/illustration/premium/thumb/sorry-item-not-found-illustration-download-in-svg-png-gif-file-formats--available-product-tokostore-pack-e-commerce-shopping-illustrations-2809510.png"
+              alt=""
+            />
+            <h1>No Item Found</h1>
+          </div>
+        )} */}
       </section>
     </>
   );

@@ -31,14 +31,20 @@ const HomePage = () => {
       price: [],
     }));
   };
+  const handleCategory = (value) => {
+    setFilters((prev) => ({ ...prev, category: value }));
+  };
   const handleOffer = (value) => {
     setFilters((prev) => ({ ...prev, offer: value }));
   };
+  // console.log(filters.category);
+  // console.log(filters.offer);
+  // console.log(filters.category)
   const handlePrice = (a, b) => {
     // setFilters((prev) => ({ ...prev, price: value }));
     setFilters((prev) => ({ ...prev, price: [a, b] }));
   };
-
+  // console.log(filters.price.length > 0, filters.price);
   const handleCartItemClick = (value) => {
     setCart((prev) => [...prev, value]);
   };
@@ -63,7 +69,7 @@ const HomePage = () => {
         // isPricePresent = food.price < 100;
         isPricePresent =
           filters.price[0] <= food.price && food.price < filters.price[1];
-        console.log("price", filters.price);
+        // console.log("price", filters.price);
       }
 
       if (filters.search) {
@@ -91,7 +97,13 @@ const HomePage = () => {
       <Suggest
         foodList={foods}
         handleFilterCatoegory={handleFilterCatoegory}
-        isFilterAdded={!!filters.category}
+        handleCategory={handleCategory}
+        isFilterAdded={
+          filters.category ||
+          filters.search ||
+          filters.price.length > 0 ||
+          filters.offer
+        }
         handlePrice={handlePrice}
       />
       <div className="hr_tag">

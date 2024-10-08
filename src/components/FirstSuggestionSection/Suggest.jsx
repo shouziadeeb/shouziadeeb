@@ -9,8 +9,11 @@ const Suggest = ({
   handleFilterCatoegory,
   isFilterAdded,
   handlePrice,
+  handleCategory,
 }) => {
   const [state, setState] = useState(false);
+  const [isPrice, setisPrice] = useState(null);
+  const [activeItem, setActiveItem] = useState(null);
   const [isLoading, setIsLoading] = useState(true); // Add isLoading state
   const priceArr = [
     { range: "49 - 149", max: 149, min: 49 },
@@ -38,8 +41,8 @@ const Suggest = ({
                 <div className="box" key={foodItem.id}>
                   {/* Responsive Skeleton Loader */}
                   <Skeleton
-                    width={"8vw"} // Adjust skeleton size to match the box size
-                    height={"8vw"}
+                    width={"11vw"} // Adjust skeleton size to match the box size
+                    height={"11vw"}
                     style={{
                       borderRadius: "50%", // Circular skeleton for the image
                     }}
@@ -52,11 +55,20 @@ const Suggest = ({
                 </div>
               ) : (
                 <div
-                  className="box"
-                  onClick={() => handleFilterCatoegory(foodItem.unique)}
+                  className={`box ${
+                    activeItem === foodItem.id ? "active" : ""
+                  }`}
+                  onClick={() => {
+                    handleCategory(foodItem.unique);
+                    setActiveItem(foodItem.id);
+                  }}
                   key={foodItem.id}
                 >
-                  <img src={foodItem.img} alt={foodItem.unique} />
+                  <img
+                    src={foodItem.img}
+                    alt={foodItem.unique}
+                    className={activeItem === foodItem.id ? "imgactive" : ""}
+                  />
                   <p>{foodItem.unique}</p>
                 </div>
               );
@@ -70,7 +82,7 @@ const Suggest = ({
             }}
           >
             <div className="dropown">
-              Price <RiArrowDropDownFill />
+              {isPrice ? isPrice : "Price"} <RiArrowDropDownFill />
             </div>
             <div
               className="dropdown_box"
@@ -88,7 +100,10 @@ const Suggest = ({
                 ) : (
                   <p
                     key={index}
-                    onClick={() => handlePrice(item.min, item.max)}
+                    onClick={() => {
+                      handlePrice(item.min, item.max);
+                      setisPrice(item.range);
+                    }}
                   >
                     {item.range}
                   </p>
@@ -96,7 +111,14 @@ const Suggest = ({
               )}
             </div>
           </div>
-          <div className="all_items" onClick={() => handleFilterCatoegory("")}>
+          <div
+            className="all_items"
+            onClick={() => {
+              handleFilterCatoegory("");
+              setActiveItem(null);
+              setisPrice(null);
+            }}
+          >
             <p>{isFilterAdded ? "Show all?" : "All items here"}</p>
           </div>
         </div>

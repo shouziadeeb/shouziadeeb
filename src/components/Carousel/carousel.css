@@ -3,20 +3,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 70vh; */
+  height: 70vh;
 }
 
-.carousel-slide img {
-  width: 80vw;
-  height: 40vw;
-  border-radius: 1vw;
-}
 .carousel-content {
   display: flex;
   width: 80%;
   height: 100%;
+  align-items: center;
   justify-content: center;
   transition: transform 0.4s ease-in-out;
+}
+.carousel-slide img {
+  width: 50vw; 
+  height: 25vw; 
+  border-radius: 1vw;
 }
 .carousel-slide {
   opacity: 0;
@@ -36,7 +37,6 @@
   justify-content: center;
   margin-top: 1vw;
   overflow: hidden;
-
 }
 .Mycarousel {
   width: 75%;
@@ -90,6 +90,14 @@
 }
 /* */
 @media (max-width: 600px) {
+  .container {
+    height: 30vh;
+  }
+  .carousel-slide img {
+    width: 70vw;
+    height: 35vw;  
+    border-radius: 1vw;
+  }
   .CarouselSecond {
     width: 100%;
     display: flex;
