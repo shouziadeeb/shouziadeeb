@@ -1,194 +1,191 @@
 [
-  {
-    "id": "1",
-    "name": "Single Cheese Pizza",
-    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/640px-Eq_it-na_pizza-margherita_sep2005_sml.jpg",
-    "category": "pizzaCheese",
-    "price": 49,
-    "content": "This is not good for health",
-    "unique": "PIZZA"
-  },
-  {
-    "id": "2",
-    "name": "Corn Pizza",
-    "img": "https://tarasmulticulturaltable.com/wp-content/uploads/2017/04/New-York-Style-Pizza-5-of-5.jpg",
-    "category": "pizzaCornoffer",
-    "price": 199,
-    "content": "This is not good for health"
-  },
-  {
-    "id": "3",
-    "name": "Vegetable Pizza",
-    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvRSYByjQVa3jrpxTUTPxNDBj4BJRHugIGaA&s",
-    "category": "pizzaVegetable",
-    "price": 299,
-    "content": "This is not good for health"
-  },
-  {
-    "id": "4",
-    "name": "Double Cheese Pizza",
-    "img": "https://popmenucloud.com/cdn-cgi/image/width%3D1200%2Cheight%3D1200%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/ouyvqwjm/c0457f01-dbf4-443f-a89f-3b5644e1f795.jpg",
-    "category": "pizzaDoubleCheese",
-    "price": 229,
-    "content": "This is not good for health"
-  },
-  {
-    "id": "5",
-    "name": "Farm Fresh Pizza",
-    "img": "https://media.istockphoto.com/id/1404892450/photo/pizza-margherita.webp?b=1&s=612x612&w=0&k=20&c=yHUh2rQikFJWvJmBT4t5U7Y75pm7HslflgogcP9IavA=",
-    "category": "pizzaFarmFresh",
-    "price": 399,
-    "content": "This is not good for health"
-  },
-  {
-    "id": "6",
-    "name": "Plane Burger",
-    "img": "https://static.vecteezy.com/system/resources/previews/019/023/604/non_2x/front-view-tasty-meat-burger-with-cheese-and-salad-free-photo.jpg",
-    "category": "Planeburger",
-    "price": 129,
-    "content": "This is not good for health",
-    "unique": "BURGER"
-  },
-  {
-    "id": "7",
-    "name": "Cheese Burger",
-    "img": "https://static.vecteezy.com/system/resources/thumbnails/023/809/530/small_2x/a-flying-burger-with-all-the-layers-ai-generative-free-photo.jpg",
-    "category": "Cheeseburger",
-    "price": 179,
-    "content": "This is not good for health"
-  },
-  {
-    "id": "8",
-    "name": "Tandoori Burger",
-    "img": "https://static.vecteezy.com/system/resources/previews/023/558/535/non_2x/close-up-of-a-juicy-burger-with-fries-it-look-very-delicious-big-sandwich-hamburger-with-juicy-beef-burger-cheese-tomato-and-red-onion-photo.jpg",
-    "category": "Tandooriburger",
-    "price": 139,
-    "content": "This is not good for health"
-  },
-  {
-    "id": "9",
-    "name": "Fiery Burger",
-    "img": "https://t4.ftcdn.net/jpg/06/25/94/13/240_F_625941344_qyANTzAvvbIXny8rX4X0v8Df31o5DkyO.jpg",
-    "category": "Fieryburger",
-    "price": 239,
-    "content": "This is not good for health"
-  },
-  {
-    "id": "10",
-    "name": "Veg Burger",
-    "img": "https://media.istockphoto.com/id/2061716709/photo/grilled-rib-burger.webp?b=1&s=612x612&w=0&k=20&c=Wr5FVrvoxpf4areNnoIXzsGOy4xQb1qa3c6vw5PyZdk=",
-    "category": "Vegburgeroffer",
-    "price": 99,
-    "content": "This is not good for health"
-  },
-  {
-    "id": "11",
-    "name": "Momos",
-    "img": "https://cdn.foodaciously.com/static/recipes/ee9fd204-25cf-4e97-be5a-d7626470d420/easy-vegan-momos-recipe-7ab341154a5c13d6d9642300e7e2c92d-2560.jpg",
-    "category": "momos",
-    "price": 60,
-    "content": "This is not good for health",
-    "unique": "MOMOS"
-  },
-  {
-    "id": "12",
-    "name": "Kurkure Momos",
-    "img": "https://5.imimg.com/data5/SELLER/Default/2022/2/NX/KK/VE/143198750/new-product-500x500.jpeg",
-    "category": "Kurkuremomosoffer",
-    "price": 90,
-    "content": "This is not good for health"
-  },
-  {
-    "id": "13",
-    "name": "Gravy Momos",
-    "img": "https://res.cloudinary.com/purnesh/image/upload/f_auto/v1510643616/tikhi-gali-momos-header00.jpg",
-    "category": "Gravymomos",
-    "price": 109,
-    "content": "This is not good for health"
-  },
-  {
-    "id": "14",
-    "name": "Roasted Momos",
-    "img": "https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/1/2017/04/07115730/070417_WowMomos_03.jpg",
-    "category": "Roastedmomos",
-    "price": 109,
-    "content": "This is not good for health"
-  },
-  {
-    "id": "15",
-    "name": "Creamy Momos",
-    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjr0xWn3OhXiyP2Nd0aHf8oBbTr9i6ohE2Bm5QjmNDrYlvDHdyRadwmqdsZvzReV_8fVc&usqp=CAU",
-    "category": "Creamymomos",
-    "price": 109,
-    "content": "This is not good for health"
-  },
-  {
-    "id": "16",
-    "name": "Mix Orange",
-    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvvwSZDDd3e4qTruiQVKf1kLOZ0ZoVUnseug&s",
-    "category": "Orangedrinks",
-    "price": 105,
-    "content": "This is not good for health",
-    "unique": "DRINKS"
-  },
-  {
-    "id": "17",
-    "name": "Blue Berry",
-    "img": "https://img.taste.com.au/WtNfVSJq/taste/2016/11/blueberry-crush-118462-1.jpeg",
-    "category": "BlueBerrydrinksoffer",
-    "price": 59,
-    "content": "This is not good for health"
-  },
-  {
-    "id": "18",
-    "name": "Strawberry",
-    "img": "https://www.southernliving.com/thmb/p3rj2KPkGbbMVpuN4mgBkVeZAWc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Strawberry_Margarita_005-559a65e7d653462a8fc17156c96cd76f.jpg",
-    "category": "Strawberrydrinks",
-    "price": 79,
-    "content": "This is not good for health"
-  },
-  {
-    "id": "19",
-    "name": "Mojito",
-    "img": "https://www.foodandwine.com/thmb/e8AvEfBBfwjg3xmt6E__rRvSZlA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Mojito-FT-RECIPE1022-2000-85cdb1eb59454847b713713e32e365c0.jpg",
-    "category": "Mojitodrinks",
-    "price": 119,
-    "content": "This is not good for health"
-  },
-  {
-    "id": "20",
-    "name": "Mango",
-    "img": "https://media.istockphoto.com/id/904617420/photo/fresh-mango-smoothie-in-the-glass.jpg?s=612x612&w=0&k=20&c=ogIRn5AfahJNU4W8UmQIZ-mJqL9tgOm9yH_-5WJmkSQ=",
-    "category": "Mangodrinks",
-    "price": 109,
-    "content": "This is good for health"
-  },
-  {
-    "id": "21",
-    "name": "Chowmin",
-    "img": "https://www.myplantifulcooking.com/wp-content/uploads/2023/03/oyster-sauce-noodles-featured.jpg",
-    "category": "Chowminnoodles",
-    "price": 105,
-    "content": "This is not good for health",
-    "unique": "NOODLES"
-  },
-  {
-    "id": "22",
-    "name": "Plane Sandwich",
-    "img": "https://www.indianhealthyrecipes.com/wp-content/uploads/2022/07/mayonnaise-sandwich-mayo-sandwich.jpg",
-    "category": "Planesandwichoffer",
-    "price": 39,
-    "content": "This is not good for health",
-    "unique": "SANDWICH"
-  },
-  {
-    "id": "23",
-    "name": "Chocolate Fudge Sundae",
-    "img": "https://static01.nyt.com/images/2017/06/12/dining/00Icecream11/00Icecream11-superJumbo.jpg",
-    "category": "Ice Cream",
-    "price": 120,
-    "content": "Rich chocolate fudge over creamy vanilla ice cream."
-  },
+  
+  
+    {
+      "id": "1",
+      "name": "Single Cheese Pizza",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/640px-Eq_it-na_pizza-margherita_sep2005_sml.jpg",
+      "category": "pizzaCheese",
+      "price": 49,
+      "content": "Classic cheese pizza on a crispy crust.",
+      "unique": "PIZZA"
+    },
+    {
+      "id": "2",
+      "name": "Corn Pizza",
+      "img": "https://tarasmulticulturaltable.com/wp-content/uploads/2017/04/New-York-Style-Pizza-5-of-5.jpg",
+      "category": "pizzaCornoffer",
+      "price": 199,
+      "content": "Sweet corn atop savory cheese pizza."
+    },
+    {
+      "id": "3",
+      "name": "Vegetable Pizza",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvRSYByjQVa3jrpxTUTPxNDBj4BJRHugIGaA&s",
+      "category": "pizzaVegetable",
+      "price": 299,
+      "content": "Loaded with fresh vegetables and cheese."
+    },
+    {
+      "id": "4",
+      "name": "Double Cheese Pizza",
+      "img": "https://popmenucloud.com/cdn-cgi/image/width%3D1200%2Cheight%3D1200%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/ouyvqwjm/c0457f01-dbf4-443f-a89f-3b5644e1f795.jpg",
+      "category": "pizzaDoubleCheese",
+      "price": 229,
+      "content": "Indulge in double layers of cheese."
+    },
+    {
+      "id": "5",
+      "name": "Farm Fresh Pizza",
+      "img": "https://media.istockphoto.com/id/1404892450/photo/pizza-margherita.webp?b=1&s=612x612&w=0&k=20&c=yHUh2rQikFJWvJmBT4t5U7Y75pm7HslflgogcP9IavA=",
+      "category": "pizzaFarmFresh",
+      "price": 399,
+      "content": "Fresh seasonal veggies on a delicious crust."
+    },
+    {
+      "id": "6",
+      "name": "Plane Burger",
+      "img": "https://static.vecteezy.com/system/resources/previews/019/023/604/non_2x/front-view-tasty-meat-burger-with-cheese-and-salad-free-photo.jpg",
+      "category": "Planeburger",
+      "price": 129,
+      "content": "Juicy patty with cheese and fresh lettuce.",
+      "unique": "BURGER"
+    },
+    {
+      "id": "7",
+      "name": "Cheese Burger",
+      "img": "https://static.vecteezy.com/system/resources/thumbnails/023/809/530/small_2x/a-flying-burger-with-all-the-layers-ai-generative-free-photo.jpg",
+      "category": "Cheeseburger",
+      "price": 179,
+      "content": "Stacked high with layers of melting cheese."
+    },
+    {
+      "id": "8",
+      "name": "Tandoori Burger",
+      "img": "https://static.vecteezy.com/system/resources/previews/023/558/535/non_2x/close-up-of-a-juicy-burger-with-fries-it-look-very-delicious-big-sandwich-hamburger-with-juicy-beef-burger-cheese-tomato-and-red-onion-photo.jpg",
+      "category": "Tandooriburger",
+      "price": 139,
+      "content": "Spicy and juicy with Indian tandoori flavors."
+    },
+    {
+      "id": "9",
+      "name": "Fiery Burger",
+      "img": "https://t4.ftcdn.net/jpg/06/25/94/13/240_F_625941344_qyANTzAvvbIXny8rX4X0v8Df31o5DkyO.jpg",
+      "category": "Fieryburger",
+      "price": 239,
+      "content": "Packed with heat and flavor in every bite."
+    },
+    {
+      "id": "10",
+      "name": "Veg Burger",
+      "img": "https://media.istockphoto.com/id/2061716709/photo/grilled-rib-burger.webp?b=1&s=612x612&w=0&k=20&c=Wr5FVrvoxpf4areNnoIXzsGOy4xQb1qa3c6vw5PyZdk=",
+      "category": "Vegburgeroffer",
+      "price": 99,
+      "content": "Savory veggie patty with fresh toppings."
+    },
+    {
+      "id": "11",
+      "name": "Momos",
+      "img": "https://cdn.foodaciously.com/static/recipes/ee9fd204-25cf-4e97-be5a-d7626470d420/easy-vegan-momos-recipe-7ab341154a5c13d6d9642300e7e2c92d-2560.jpg",
+      "category": "momos",
+      "price": 60,
+      "content": "Steamed dumplings filled with spiced vegetables.",
+      "unique": "MOMOS"
+    },
+    {
+      "id": "12",
+      "name": "Kurkure Momos",
+      "img": "https://5.imimg.com/data5/SELLER/Default/2022/2/NX/KK/VE/143198750/new-product-500x500.jpeg",
+      "category": "Kurkuremomosoffer",
+      "price": 90,
+      "content": "Crispy momos with savory fillings inside."
+    },
+    {
+      "id": "13",
+      "name": "Gravy Momos",
+      "img": "https://res.cloudinary.com/purnesh/image/upload/f_auto/v1510643616/tikhi-gali-momos-header00.jpg",
+      "category": "Gravymomos",
+      "price": 109,
+      "content": "Drizzled with spicy gravy for extra flavor."
+    },
+    {
+      "id": "14",
+      "name": "Roasted Momos",
+      "img": "https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/1/2017/04/07115730/070417_WowMomos_03.jpg",
+      "category": "Roastedmomos",
+      "price": 109,
+      "content": "Smoky flavored momos with delightful fillings."
+    },
+    {
+      "id": "15",
+      "name": "Creamy Momos",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjr0xWn3OhXiyP2Nd0aHf8oBbTr9i6ohE2Bm5QjmNDrYlvDHdyRadwmqdsZvzReV_8fVc&usqp=CAU",
+      "category": "Creamymomos",
+      "price": 109,
+      "content": "Rich and creamy filling melts in mouth."
+    },
+    {
+      "id": "16",
+      "name": "Mix Orange",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvvwSZDDd3e4qTruiQVKf1kLOZ0ZoVUnseug&s",
+      "category": "Orangedrinks",
+      "price": 105,
+      "content": "Refreshing orange drink, sweet and tangy.",
+      "unique": "DRINKS"
+    },
+    {
+      "id": "17",
+      "name": "Blue Berry",
+      "img": "https://img.taste.com.au/WtNfVSJq/taste/2016/11/blueberry-crush-118462-1.jpeg",
+      "category": "BlueBerrydrinksoffer",
+      "price": 59,
+      "content": "Sweet and antioxidant-rich blueberry drink."
+    },
+    {
+      "id": "18",
+      "name": "Strawberry",
+      "img": "https://www.southernliving.com/thmb/p3rj2KPkGbbMVpuN4mgBkVeZAWc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Strawberry_Margarita_005-559a65e7d653462a8fc17156c96cd76f.jpg",
+      "category": "Strawberrydrinks",
+      "price": 79,
+      "content": "Vibrant strawberry drink, refreshing and delicious."
+    },
+    {
+      "id": "19",
+      "name": "Mojito",
+      "img": "https://www.foodandwine.com/thmb/e8AvEfBBfwjg3xmt6E__rRvSZlA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Mojito-FT-RECIPE1022-2000-85cdb1eb59454847b713713e32e365c0.jpg",
+      "category": "Mojitodrinks",
+      "price": 119,
+      "content": "Refreshing mint and lime cocktail delight."
+    },
+    {
+      "id": "20",
+      "name": "Mango",
+      "img": "https://media.istockphoto.com/id/904617420/photo/fresh-mango-smoothie-in-the-glass.jpg?s=612x612&w=0&k=20&c=ogIRn5AfahJNU4W8UmQIZ-mJqL9tgOm9yH_-5WJmkSQ=",
+      "category": "Mangodrinks",
+      "price": 109,
+      "content": "Delicious mango smoothie, refreshing and nutritious."
+    },
+    {
+      "id": "21",
+      "name": "Chowmin",
+      "img": "https://www.myplantifulcooking.com/wp-content/uploads/2023/03/oyster-sauce-noodles-featured.jpg",
+      "category": "Chowminnoodles",
+      "price": 105,
+      "content": "Flavorful noodles with fresh vegetables and sauce.",
+      "unique": "NOODLES"
+    },
+    {
+      "id": "22",
+      "name": "Plane Sandwich",
+      "img": "https://www.indianhealthyrecipes.com/wp-content/uploads/2022/07/mayonnaise-sandwich-mayo-sandwich.jpg",
+      "category": "Planesandwichoffer",
+      "price": 39,
+      "content": "Simple sandwich with creamy mayonnaise spread."
+    }
+  
+  
+  
+  ,
   {
     "id": "24",
     "name": "Strawberry Bliss",
@@ -203,7 +200,7 @@
     "img": "https://www.simplystacie.net/wp-content/uploads/2018/06/Mint-Chocolate-Chip-Ice-Cream-LOW-RES-33.jpg",
     "category": "Ice Cream",
     "price": 115,
-    "unique":"iCE CREAM",
+    "unique":"ICE CREAM",
     "content": "Cool mint ice cream with rich chocolate chips."
   },
   {
@@ -266,7 +263,7 @@
     "id": "33",
     "name": "Vegetable Spring Rolls",
     "img": "https://mymorningmocha.com/wp-content/uploads/2023/11/vegetable-spring-rolls-recipe.jpg",
-    "category": "Main Course",
+    "category": "MainCourseveg foods",
     "price": 120,
     "content": "Crispy spring rolls filled with fresh vegetables."
   },
@@ -274,7 +271,7 @@
     "id": "34",
     "name": "Paneer Tikka",
     "img": "https://media-cdn2.greatbritishchefs.com/media/i0fckzol/img16448.whqc_768x512q80fpt489fpl526.jpg",
-    "category": "Main Course",
+    "category": "MainCourseveg foods",
     "price": 180,
     "content": "Marinated paneer cubes grilled to perfection."
   },
@@ -282,7 +279,7 @@
     "id": "35",
     "name": "Chana Masala",
     "img": "https://www.allrecipes.com/thmb/siVGrqeV5Q7xvRGaWWA_5ph9Dds=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/236564-chana-masala-savory-indian-chick-peas-3x4-672-copy-63ae3db5114644419c313cd0e479c9dd.jpg",
-    "category": "Main Course",
+    "category": "MainCourseveg foods",
     "price": 150,
     "unique":"VEG FOODS",
     "content": "Spicy chickpeas cooked in a flavorful tomato gravy."
@@ -291,7 +288,7 @@
     "id": "36",
     "name": "Vegetable Biryani",
     "img": "https://www.livofy.com/health/wp-content/uploads/2023/03/fq5cs53_biryani-doubletree-by-hilton_625x300_12_April_22-1024x576.jpg",
-    "category": "Main Course",
+    "category": "MainCourseveg foods",
     "price": 200,
     "content": "Fragrant basmati rice cooked with assorted vegetables and spices."
   },
@@ -299,7 +296,7 @@
     "id": "37",
     "name": "Caprese Salad",
     "img": "https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2019/07/Caprese-Salad-main-1.jpg",
-    "category": "Main Course",
+    "category": "MainCourseveg foods",
     "price": 140,
     "content": "Fresh mozzarella, tomatoes, and basil drizzled with balsamic glaze."
   },
@@ -307,7 +304,7 @@
     "id": "39",
     "name": "Stuffed Bell Peppers",
     "img": "https://www.allrecipes.com/thmb/Bl9Xn058o5mZ1TWaF6qB_N-GE-4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/16330-stuffed-peppers-DDMFS-4x3-cb1707e6abf14ecc967f5daf57e236c4.jpg",
-    "category": "Main Course",
+    "category": "MainCourseveg foods",
     "price": 170,
     "content": "Bell peppers stuffed with quinoa, vegetables, and spices."
   },
@@ -315,7 +312,7 @@
     "id": "40",
     "name": "Pasta Primavera",
     "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcj0owhSIZF38KQA90yAo4zcVv9Z6B6TOIWw&s",
-    "category": "Main Course",
+    "category": "MainCourseveg foods",
     "price": 180,
     "content": "Pasta tossed with fresh seasonal vegetables and olive oil."
   },
@@ -323,7 +320,7 @@
     "id": "41",
     "name": "Falafel Wrap",
     "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiH9_XU_DkgwUEXhtwmtar_8FYALq1TFKYNQ&s",
-    "category": "Main Course",
+    "category": "MainCourseveg foods",
     "price": 150,
     "content": "Crispy falafel balls wrapped in pita with veggies and tahini sauce."
   },
@@ -331,7 +328,7 @@
     "id": "42",
     "name": "Zucchini Noodles",
     "img": "https://www.inspiredtaste.net/wp-content/uploads/2016/08/Zucchini-Pasta-Recipe.jpg",
-    "category": "Main Course",
+    "category": "MainCourseveg foods",
     "price": 140,
     "content": "Spiralized zucchini served with marinara sauce."
   }

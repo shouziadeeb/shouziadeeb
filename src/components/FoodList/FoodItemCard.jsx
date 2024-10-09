@@ -25,23 +25,53 @@ export function FoodItemCard({
     return () => clearTimeout(timer);
   }, []);
   console.log(foodItem);
+  let isScreenSize = window.innerWidth > 600;
   return (
     <>
       <div className="food_card">
         {loading ? (
           // Skeleton for loading state (adjust sizes to match your card CSS)
-          <>
+          <div
+            style={{
+              width: "100%",
+              alignItems: "center",
+              justifyContent: isScreenSize ? "center" : "space-between",
+              display: "flex",
+              flexDirection: isScreenSize && "column",
+            }}
+          >
             <Skeleton
-              height={"24vw"} // Match the responsive image size in your CSS
-              width={"24vw"}
-              borderRadius={"5%"}
+              height={isScreenSize ? "155px" : "24vw"} // Match the responsive image size in your CSS
+              width={isScreenSize ? "155px" : "24vw"}
+              borderRadius={isScreenSize ? "50%" : "1vw"}
+              style={{ marginBottom: isScreenSize && "1vw" }}
             />{" "}
-            {/* Image skeleton */}
-            <Skeleton height={"4.4vw"} width={`60%`} /> {/* Name skeleton */}
-            <Skeleton height={"4.4vw"} width={`80%`} /> {/* Content skeleton */}
-            <Skeleton height={"4.4vw"} width={`40%`} /> {/* Price skeleton */}
-            <Skeleton height={"6vw"} width={"30%"} /> {/* Button skeleton */}
-          </>
+            <div
+              style={{
+                width: "40%",
+                height: "60px",
+                display: "flex",
+                flexDirection: isScreenSize ? "column" : "column",
+                justifyContent: "center",
+                alignItems:isScreenSize?"center": "start",
+                gap: "1vw",
+                // backgroundColor: "black",
+              }}
+            >
+              <Skeleton height={isScreenSize ? "4vw" : "6vw"} width={"20vw"} />
+              <Skeleton
+                height={isScreenSize ? "4vw" : "6vw"}
+                width={isScreenSize ? "150px" : "24vw"}
+                style={{
+                  marginBottom: isScreenSize && "10px",
+                }}
+              />
+            </div>
+            <Skeleton
+              height={isScreenSize ? "4vw" : "10vw"}
+              width={isScreenSize ? "150px" : "20vw"}
+            />{" "}
+          </div>
         ) : (
           // Actual content once loading is done
           <>
