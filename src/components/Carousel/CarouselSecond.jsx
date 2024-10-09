@@ -33,7 +33,7 @@ const CarouselSecond = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false); // Simulate API load
-    }, 2000); // Simulate 2 seconds loading
+    }, 1000); // Simulate 2 seconds loading
     return () => clearTimeout(timer);
   }, []);
 

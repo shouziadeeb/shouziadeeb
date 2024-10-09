@@ -26,7 +26,7 @@ const Suggest = ({
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false); // Set isLoading to false after 2 seconds
-    }, 2000);
+    }, 1000);
     return () => clearTimeout(timer); // Cleanup timer on unmount
   }, []);
 
@@ -41,8 +41,8 @@ const Suggest = ({
                 <div className="box" key={foodItem.id}>
                   {/* Responsive Skeleton Loader */}
                   <Skeleton
-                    width={"11vw"} // Adjust skeleton size to match the box size
-                    height={"11vw"}
+                    width={window.innerWidth > 600 ? "8vw" : "14vw"} // Adjust skeleton size to match the box size
+                    height={window.innerWidth > 600 ? "8vw" : "14vw"}
                     style={{
                       borderRadius: "50%", // Circular skeleton for the image
                     }}

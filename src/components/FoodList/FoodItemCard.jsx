@@ -21,7 +21,7 @@ export function FoodItemCard({
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false); // Set loading to false after 2 seconds
-    }, 2000);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
   console.log(foodItem);

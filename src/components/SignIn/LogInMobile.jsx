@@ -62,8 +62,10 @@ export const LogInMobile = () => {
       <div className="signIn_page1">
         <form onSubmit={handleSignIndata}>
           <input
-            type="number"
+            type="tel"
             name="number"
+            maxlength="10"
+            minlength="10"
             placeholder="Number"
             value={localStorageUser ? localStorageUser.number : ""}
             ref={numberRef}

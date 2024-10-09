@@ -71,6 +71,7 @@
   height: 5vw;
   justify-content: space-around;
   align-items: center;
+  overflow: hidden;
 }
 .total_price_and_btn button {
   background: #fc8019;
