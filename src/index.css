@@ -56,9 +56,10 @@ button {
   background-color: rgb(255, 255, 255);
   box-shadow: 1px 100px 20px whitesmoke;
   box-shadow: 0 0 8px rgb(190, 189, 189);
+  border-bottom: 1px solid rgb(187, 187, 187);
 }
-.myOrder_for_mobile hr{
-  width: 1px; 
+.myOrder_for_mobile hr {
+  width: 1px;
   height: 100%;
   color: gray;
 }
