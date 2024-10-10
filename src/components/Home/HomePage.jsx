@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { FaAngleRight } from "react-icons/fa6";
 import Header from "../Header/Header";
 import Suggest from "../FirstSuggestionSection/Suggest";
@@ -11,7 +11,8 @@ import HeaderMobile from "../HeaderForMobile/HeaderMobile";
 import CarouselSecond from "../Carousel/CarouselSecond";
 import MyOrder from "../MyOrders/MyOrder";
 import { useNavigate } from "react-router-dom";
-length;
+import { FaShoppingBag } from "react-icons/fa";
+
 const HomePage = () => {
   const navigate = useNavigate();
   const [filters, setFilters] = useState({
@@ -22,6 +23,8 @@ const HomePage = () => {
   });
   const [showCart, setShowCart] = useState(false);
   const [cart, setCart] = useState([]);
+  const [showOnScroll, setShowOnScroll] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const handleSearch = (value) => {
     setFilters((prev) => ({ ...prev, search: value }));
   };
@@ -35,6 +38,30 @@ const HomePage = () => {
       price: [],
     }));
   };
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // If the user is scrolling down, hide the div
+      if (currentScrollY > lastScrollY) {
+        setShowOnScroll(false);
+      } else {
+        // If the user is scrolling up, show the div
+        setShowOnScroll(true);
+      }
+
+      // Update the last scroll position
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener on unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   const handleCategory = (value) => {
     setFilters((prev) => ({ ...prev, category: value }));
   };
@@ -160,17 +187,21 @@ const HomePage = () => {
       <div
         className="myOrder_for_mobile"
         style={{
-          display: window.innerWidth < 600 ? "flex" : "none",
+          height: showOnScroll && window.innerWidth < 600 ? "18vw" : "0",
         }}
       >
-        <div className="for_mobile_order">cart</div>
+        <div className="for_mobile_order">
+          <span>
+            <FaShoppingBag />
+          </span>{" "}
+          Cart
+        </div>
         <hr />
         <div className="for_mobile_order" onClick={() => navigate("/orders")}>
           <span>
-            {" "}
-            <img src="src\assets\shopping-bag.png" alt="" />
+            <FaShoppingBag />
           </span>{" "}
-          My Order
+          Order
           <span style={{ color: "black", fontWeight: "bolder" }}>
             {orderedData.length}
           </span>

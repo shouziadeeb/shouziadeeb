@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./headerMobile.css";
 import { FaUserCircle, FaLocationArrow } from "react-icons/fa";
 import { IoIosSearch } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
 const HeaderMobile = ({ handleSearch, searchValue }) => {
+  const [inputPlaceholder, setInputPlaceholder] = useState(0);
+  const [animate, setAnimate] = useState(false);
   const navigate = useNavigate();
-  const item = "pizza";
+  const inputArray = ["Pizza", "Burger", "Momo", "Ice Cream"];
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimate(true);
+     setTimeout(() => {
+        setAnimate(false); // End animation after 500ms
+        setInputPlaceholder((prev) =>
+          prev >= inputArray.length - 1 ? 0 : prev + 1
+        );
+      }, 500);
+    }, 2000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [inputArray.length]);
   return (
     <div className="header">
       <div className="header_content">
@@ -21,7 +37,8 @@ const HeaderMobile = ({ handleSearch, searchValue }) => {
         <div className="search_input">
           <input
             type="text"
-            placeholder={`Search for item...`}
+            placeholder={`Search for "${inputArray[inputPlaceholder]}"`}
+            className={`input-placeholder ${animate ? "slide-up" : ""}`}
             value={searchValue}
             onChange={(e) => handleSearch(e.target.value)}
           />

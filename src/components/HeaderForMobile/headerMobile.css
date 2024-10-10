@@ -34,10 +34,13 @@
 .header .addrs_and_user .user_icon {
   font-size: larger;
 }
+
 .header .search_input {
   width: 90vw;
   height: 10vw;
   position: relative;
+  display: inline-block;
+  overflow: hidden;
 }
 .header .search_input input {
   width: 100%;
