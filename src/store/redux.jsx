@@ -5,6 +5,7 @@ export const cart = createSlice({
   initialState: {
     items: [], // Store the items in the cart
     AllTotal: 0, // Initialize total price
+    AllTotal2: 0, // Initialize total price
     myOrders: [],
   },
   reducers: {
@@ -43,7 +44,14 @@ export const cart = createSlice({
       }
     },
     handleAllTotalPrice(state, action) {
-      state.AllTotal = action.payload;
+      const totalPrice = action.payload;
+      state.AllTotal = totalPrice;
+      console.log("1=>", state.AllTotal);
+    },
+    handleAllTotalPrice2(state, action) {
+      const totalPrice = action.payload;
+      state.AllTotal2 = totalPrice;
+      console.log("2=>", state.AllTotal2);
     },
     handleMyOrder(state, action) {
       const newItem = action.payload;
@@ -57,5 +65,10 @@ export const cart = createSlice({
   },
 });
 
-export const { addToCart, handleQuantity, handleAllTotalPrice, handleMyOrder } =
-  cart.actions;
+export const {
+  addToCart,
+  handleQuantity,
+  handleAllTotalPrice,
+  handleMyOrder,
+  handleAllTotalPrice2,
+} = cart.actions;

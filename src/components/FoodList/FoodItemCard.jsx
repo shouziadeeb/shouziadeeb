@@ -10,27 +10,27 @@ export function FoodItemCard({
   handleCartItemClick,
   isAlreadyInCart,
 }) {
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(true); 
   const dispatch = useDispatch();
 
   const addNewCart = (payload) => {
     dispatch(addToCart(payload));
   };
 
-  // Simulate loading time
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false); // Set loading to false after 2 seconds
     }, 1000);
     return () => clearTimeout(timer);
   }, []);
-  // console.log(foodItem);
+
   let isScreenSize = window.innerWidth > 600;
   return (
     <>
       <div className="food_card">
         {loading ? (
-          // Skeleton for loading state (adjust sizes to match your card CSS)
+       
           <div
             style={{
               width: "100%",
@@ -49,27 +49,30 @@ export function FoodItemCard({
             <div
               style={{
                 width: "40%",
-                height: "60px",
+                // height: "60px",
                 display: "flex",
                 flexDirection: isScreenSize ? "column" : "column",
                 justifyContent: "center",
-                alignItems:isScreenSize?"center": "start",
+                alignItems: isScreenSize ? "center" : "start",
                 gap: "1vw",
                 // backgroundColor: "black",
               }}
             >
-              <Skeleton height={isScreenSize ? "4vw" : "6vw"} width={"20vw"} />
               <Skeleton
-                height={isScreenSize ? "4vw" : "6vw"}
-                width={isScreenSize ? "150px" : "24vw"}
+                height={isScreenSize ? "2vw" : "5vw"}
+                width={isScreenSize ? "140px" : "24vw"}
+              />
+              <Skeleton
+                height={isScreenSize ? "2vw" : "5vw"}
+                width={isScreenSize ? "140px" : "24vw"}
                 style={{
                   marginBottom: isScreenSize && "10px",
                 }}
               />
             </div>
             <Skeleton
-              height={isScreenSize ? "4vw" : "10vw"}
-              width={isScreenSize ? "150px" : "20vw"}
+              height={isScreenSize ? "2vw" : "5vw"}
+              width={isScreenSize ? "10vw" : "20vw"}
             />{" "}
           </div>
         ) : (

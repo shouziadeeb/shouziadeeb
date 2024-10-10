@@ -42,9 +42,7 @@ const Address = ({ showAddress, setshowAddress }) => {
     setShowForm(true);
   };
 
-  const handlePayment = (obj) => {
-    console.log(obj);
-  };
+  const handlePayment = (obj) => {};
 
   const handleFilterAddress = (value) => {
     const filteredAddress = storedUser.filter(

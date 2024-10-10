@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./myOrder.css";
 import { useDispatch, useSelector } from "react-redux";
-import { handleMyOrder } from "../../store/redux";
+import { handleAllTotalPrice2, handleMyOrder } from "../../store/redux";
 import Badge from "@mui/material/Badge";
 
 const MyOrder = () => {
   const orderedData = useSelector((state) => state.cartList.myOrders);
   const totalAmount = useSelector((state) => state.cartList.AllTotal);
+  const totalAmount2 = useSelector((state) => state.cartList.AllTotal2);
   const dispatch = useDispatch();
 
   const [deliveryTime, setDeliveryTime] = useState(""); // Time of delivery
@@ -29,6 +30,8 @@ const MyOrder = () => {
     // Save to localStorage
   }, [orderedData.length > 0]);
 
+  console.log(totalAmount);
+  console.log(totalAmount2);
   // Update current time every second and check for delivery
   useEffect(() => {
     const interval = setInterval(() => {
@@ -41,7 +44,7 @@ const MyOrder = () => {
 
       if (formattedTime === deliveryTime) {
         dispatch(handleMyOrder([])); // Clear order
-
+        dispatch(handleAllTotalPrice2(0)); // Clear order
         localStorage.removeItem("deliveryTime"); //
         setDeliveryTime("");
         clearInterval(interval); // Stop checking after delivery
@@ -75,7 +78,7 @@ const MyOrder = () => {
           )}
         </div>
         <div className="my_order_text">
-          <h3>Total Amount: ₹{totalAmount}</h3>
+          <h3>Total Amount: ₹{totalAmount2}</h3>
           <h3>
             Order Will be Delivered At:{" "}
             {orderedData.length > 0 ? deliveryTime : ""}

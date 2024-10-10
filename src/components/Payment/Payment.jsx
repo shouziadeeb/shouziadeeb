@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./payment.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, handleMyOrder } from "../../store/redux";
+import {
+  addToCart,
+  handleAllTotalPrice,
+  handleAllTotalPrice2,
+  handleMyOrder,
+} from "../../store/redux";
 import { useNavigate } from "react-router-dom";
 
 const Payment = () => {
@@ -14,8 +19,6 @@ const Payment = () => {
 
   console.log(total);
 
-  console.log(cartData);
-
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
@@ -26,6 +29,8 @@ const Payment = () => {
     if (selectedOption && cartData.length > 0) {
       cartData.map((item) => dispatch(handleMyOrder(item)));
 
+      dispatch(handleAllTotalPrice(total));
+      dispatch(handleAllTotalPrice2(total));
       dispatch(addToCart([]));
       setIsModalOpen(true);
     } else {
@@ -117,22 +122,62 @@ export default Payment;
 
 const OrderDeliveredModal = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
+  const [isOrderConfirmed, setIsOrderConfirmed] = useState(true);
+
   if (!isOpen) return null;
 
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <h2>Order Confirmed!</h2>
-        <p>Your order will be delivered soon.</p>
-        <button
-          className="close-btn"
-          onClick={() => {
-            onClose();
-            navigate("/");
-          }}
+        <OrderConfirmed isConfirmed={isOrderConfirmed} />
+
+        <div className="content_of_modal">
+          <h2>Order Confirmed!</h2>
+          <p>Your order will be delivered soon.</p>
+          <button
+            className="close-btn"
+            onClick={() => {
+              onClose();
+              navigate("/");
+            }}
+          >
+            Back to Home
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+const OrderConfirmed = ({ isConfirmed }) => {
+  const [showAnimation, setShowAnimation] = useState(false);
+
+  useEffect(() => {
+    if (isConfirmed) {
+      setShowAnimation(true);
+    }
+  }, [isConfirmed]);
+
+  return (
+    <div className={`order-confirmation ${showAnimation ? "show" : ""}`}>
+      <div className="checkmark-container">
+        <svg
+          className="checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 52 52"
         >
-          Close
-        </button>
+          <circle
+            className="checkmark__circle"
+            cx="26"
+            cy="26"
+            r="25"
+            fill="none"
+          />
+          <path
+            className="checkmark__check"
+            fill="none"
+            d="M14.1 27.2l7.1 7.2 16.7-16.8"
+          />
+        </svg>
       </div>
     </div>
   );
