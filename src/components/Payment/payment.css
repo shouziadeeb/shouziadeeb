@@ -92,12 +92,18 @@
   text-align: center;
   width: 90%;
   height: 45%;
+  display: flex;
+  padding: 1vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
   max-width: 400px;
+  gap: 1vw;
 }
 .content_of_modal {
-  position: absolute;
-  top: 40%;
+  /* position: absolute;
+  top: 40%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -133,10 +139,6 @@
 }
 
 .order-confirmation {
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translate(-50%);
   opacity: 0;
   transition: opacity 0.5s ease-out;
   z-index: 1000;
@@ -153,7 +155,7 @@
 }
 
 .checkmark {
-  width: 100px;
+  width: 20vw;
   height: 100px;
   stroke-width: 2;
   stroke: #4caf50;
@@ -280,6 +282,6 @@
     margin-bottom: 20px;
   }
   .modal-content {
-    height: 35%;
+    height: 45%;
   }
 }
