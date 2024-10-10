@@ -61,10 +61,10 @@ button {
   transition: 0.2s;
 }
 .myOrder_for_mobile hr {
-  width: 1px;
+  width: 0;
   height: 100%;
-  color: rgb(216, 214, 214);
-  /* display: none; */
+  border: 1px solid rgb(202, 201, 201);
+  margin: 0;
 }
 
 a {
