@@ -24,7 +24,7 @@ export function FoodItemCard({
     }, 1000);
     return () => clearTimeout(timer);
   }, []);
-  console.log(foodItem);
+  // console.log(foodItem);
   let isScreenSize = window.innerWidth > 600;
   return (
     <>

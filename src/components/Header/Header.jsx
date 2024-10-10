@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoSearchOutline } from "react-icons/io5";
 import { BiSolidOffer } from "react-icons/bi";
-import { MdHelpOutline } from "react-icons/md";
+import { MdHelpOutline, MdDeliveryDining } from "react-icons/md";
 import { FaCartPlus } from "react-icons/fa";
 import Badge from "@mui/material/Badge";
 
@@ -18,7 +18,7 @@ const Header = ({
   handleOffer,
 }) => {
   const [isInput, setIsInput] = useState(false);
-
+  const orderedData = useSelector((state) => state.cartList.myOrders);
   const handleInputShow = () => {
     setIsInput((prev) => !prev);
   };
@@ -47,6 +47,31 @@ const Header = ({
                 <p>Help</p>
               </Link>
             </li>
+            <Badge
+              badgeContent={orderedData.length}
+              color="primary"
+              componentsProps={{
+                badge: {
+                  style: {
+                    color: "white",
+                    fontSize: "1vw",
+                    border: "2px solid white",
+                    width: "-.2vw",
+                    height: "-.2vw",
+                    top: ".6vw",
+                  },
+                },
+              }}
+            >
+              <li style={{ marginTop: ".8vw" }}>
+                <Link to="/orders">
+                  <span style={{ fontSize: "2.2vw" }}>
+                    <MdDeliveryDining />
+                  </span>
+                  <p>Orders</p>
+                </Link>
+              </li>
+            </Badge>
             <Badge
               badgeContent={badgeCounter}
               color="primary"

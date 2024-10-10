@@ -15,6 +15,7 @@ import Help from "./components/Help/Help";
 import { LogInMobile } from "./components/SignIn/LogInMobile";
 import Loader from "./components/Loder/Loader";
 import Payment from "./components/Payment/Payment";
+import MyOrder from "./components/MyOrders/MyOrder";
 
 // Layout component to handle loading
 const Layout = ({ children }) => {
@@ -41,6 +42,7 @@ const Layout = ({ children }) => {
 };
 
 function App() {
+  const [deliveryTime, setDeliveryTime] = useState(480);
   const router = createBrowserRouter([
     {
       path: "/",
@@ -91,6 +93,21 @@ function App() {
           {" "}
           <Layout>
             <LogInMobile />
+            <Footer />
+          </Layout>
+        </>
+      ),
+    },
+    {
+      path: "/orders",
+      element: (
+        <>
+          {" "}
+          <Layout>
+            <MyOrder
+              deliveryTime={deliveryTime}
+              setDeliveryTime={setDeliveryTime}
+            />
             <Footer />
           </Layout>
         </>

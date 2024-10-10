@@ -1,40 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./payment.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../store/redux";
+import { addToCart, handleMyOrder } from "../../store/redux";
 import { useNavigate } from "react-router-dom";
 
 const Payment = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
   const total = useSelector((state) => state.cartList.AllTotal);
   const dispatch = useDispatch();
   const cartData = useSelector((state) => state.cartList.items);
   const [selectedOption, setSelectedOption] = useState("");
-  const [address, setAddress] = useState({
-    name: "",
-    street: "",
-    city: "",
-    postalCode: "",
-    country: "",
-  });
 
-  const [product] = useState({
-    name: "Wireless Headphones",
-    quantity: 1,
-    price: 150,
-  });
-  console.log(cartData);
-  console.log(cartData);
-  const handleAddressChange = (e) => {
-    const { name, value } = e.target;
-    setAddress({ ...address, [name]: value });
-  };
+  console.log(total);
 
-  const handlePayment = (e) => {
-    e.preventDefault();
-    // Here you would normally integrate with a payment gateway like Stripe/PayPal
-    alert("Payment Successful");
-  };
+  console.log(cartData);
+
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
   };
@@ -43,11 +24,10 @@ const Payment = () => {
     event.preventDefault();
 
     if (selectedOption && cartData.length > 0) {
+      cartData.map((item) => dispatch(handleMyOrder(item)));
+
       dispatch(addToCart([]));
-      alert(
-        `Your order will be delivered within 30 minutes Selected Payment Method: ${selectedOption}`
-      );
-      navigate("/");
+      setIsModalOpen(true);
     } else {
       alert("!Please select payment method");
     }
@@ -125,8 +105,35 @@ const Payment = () => {
           Confirm Payment
         </button>
       </div>
+      <OrderDeliveredModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };
 
 export default Payment;
+
+const OrderDeliveredModal = ({ isOpen, onClose }) => {
+  const navigate = useNavigate();
+  if (!isOpen) return null;
+
+  return (
+    <div className="modal-overlay">
+      <div className="modal-content">
+        <h2>Order Confirmed!</h2>
+        <p>Your order will be delivered soon.</p>
+        <button
+          className="close-btn"
+          onClick={() => {
+            onClose();
+            navigate("/");
+          }}
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  );
+};

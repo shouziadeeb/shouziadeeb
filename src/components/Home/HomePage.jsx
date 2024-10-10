@@ -9,8 +9,11 @@ import Carousel from "../Carousel/Carousel";
 import FoodList from "../FoodList/FoodList";
 import HeaderMobile from "../HeaderForMobile/HeaderMobile";
 import CarouselSecond from "../Carousel/CarouselSecond";
+import MyOrder from "../MyOrders/MyOrder";
+import { useNavigate } from "react-router-dom";
 length;
 const HomePage = () => {
+  const navigate = useNavigate();
   const [filters, setFilters] = useState({
     search: "",
     category: "",
@@ -23,6 +26,7 @@ const HomePage = () => {
     setFilters((prev) => ({ ...prev, search: value }));
   };
   const cartData = useSelector((state) => state.cartList.items);
+  const orderedData = useSelector((state) => state.cartList.myOrders);
   const handleFilterCatoegory = (value) => {
     setFilters((prev) => ({
       ...prev,
@@ -151,6 +155,25 @@ const HomePage = () => {
           >
             View Cart <FaAngleRight />
           </p>
+        </div>
+      </div>
+      <div
+        className="myOrder_for_mobile"
+        style={{
+          display: window.innerWidth < 600 ? "flex" : "none",
+        }}
+      >
+        <div className="for_mobile_order">cart</div>
+        <hr />
+        <div className="for_mobile_order" onClick={() => navigate("/orders")}>
+          <span>
+            {" "}
+            <img src="src\assets\shopping-bag.png" alt="" />
+          </span>{" "}
+          My Order
+          <span style={{ color: "black", fontWeight: "bolder" }}>
+            {orderedData.length}
+          </span>
         </div>
       </div>
     </>
