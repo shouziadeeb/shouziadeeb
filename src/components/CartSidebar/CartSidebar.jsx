@@ -79,12 +79,11 @@ const CartSidebar = ({ showCart, setShowCart }) => {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
+              cursor: "pointer",
               // width: "50%",
             }}
+            onClick={() => navigate("/login")}
           >
-            {/* <p style={{ fontSize: "3vw", cursor: "pointer" }} onClick={logout}>
-              <IoLogInOutline />
-            </p> */}
             <p style={{ display: "flex", gap: ".4vw", alignItems: "center" }}>
               <FiUser />
               <span style={{ fontWeight: "bolder" }}>{user.name}</span>
