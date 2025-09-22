@@ -72,7 +72,7 @@ const HomePage = () => {
     async (reset = false) => {
       try {
         const res = await fetch(
-          `http://localhost:5000/api/food?skip=${
+          `https://fooddelivery-lzym.onrender.com//api/food?skip=${
             reset ? 0 : skip
           }&limit=${limit}&search=${filters.search}&category=${
             filters.category
