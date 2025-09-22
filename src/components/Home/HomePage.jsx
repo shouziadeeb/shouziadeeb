@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import { FaShoppingBag } from "react-icons/fa";
 
 const HomePage = () => {
+  const API_URL = "https://fooddelivery-lzym.onrender.com";
   const navigate = useNavigate();
   const [filters, setFilters] = useState({
     search: "",
@@ -72,11 +73,11 @@ const HomePage = () => {
     async (reset = false) => {
       try {
         const res = await fetch(
-          `http://localhost:5000/api/food?skip=${
-            reset ? 0 : skip
-          }&limit=${limit}&search=${filters.search}&category=${
-            filters.category
-          }&minPrice=${filters.price[0]}&maxPrice=${filters.price[1]}`
+          `${API_URL}/api/food?skip=${reset ? 0 : skip}&limit=${limit}&search=${
+            filters.search
+          }&category=${filters.category}&minPrice=${
+            filters.price[0]
+          }&maxPrice=${filters.price[1]}`
         );
         const data = await res.json();
 
