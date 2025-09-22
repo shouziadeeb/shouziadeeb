@@ -73,19 +73,11 @@ const HomePage = () => {
     async (reset = false) => {
       try {
         const res = await fetch(
-<<<<<<< HEAD
           `${API_URL}/api/food?skip=${reset ? 0 : skip}&limit=${limit}&search=${
             filters.search
           }&category=${filters.category}&minPrice=${
             filters.price[0]
           }&maxPrice=${filters.price[1]}`
-=======
-          `https://fooddelivery-lzym.onrender.com//api/food?skip=${
-            reset ? 0 : skip
-          }&limit=${limit}&search=${filters.search}&category=${
-            filters.category
-          }&minPrice=${filters.price[0]}&maxPrice=${filters.price[1]}`
->>>>>>> 37b4df04273d344c3f2e1a8ea8c3190568f8313c
         );
         const data = await res.json();
 
