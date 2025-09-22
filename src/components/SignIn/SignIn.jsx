@@ -3,6 +3,8 @@ import { IoMdClose } from "react-icons/io";
 import React, { useState } from "react";
 
 export const SignIn = ({ sigInSidebar, setSignInSidebar, setUser }) => {
+  const API_URL = "https://fooddelivery-lzym.onrender.com";
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,7 +20,7 @@ export const SignIn = ({ sigInSidebar, setSignInSidebar, setUser }) => {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const res = await fetch(`${API_URL}/api/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -46,7 +48,7 @@ export const SignIn = ({ sigInSidebar, setSignInSidebar, setUser }) => {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/register", {
+      const res = await fetch(`${API_URL}/api/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password, role }),
@@ -73,7 +75,7 @@ export const SignIn = ({ sigInSidebar, setSignInSidebar, setUser }) => {
       style={{ width: sigInSidebar ? "100%" : "0" }}
     >
       <div className="signIn_page">
-          <h3>Authentication</h3>
+        <h3>Authentication</h3>
         <div className="to_close" onClick={() => setSignInSidebar(false)}>
           <IoMdClose />
         </div>
