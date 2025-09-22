@@ -68,12 +68,11 @@ const HomePage = () => {
   const [total, setTotal] = useState(0);
   const limit = 10;
 
-  
   const fetchData = useCallback(
     async (reset = false) => {
       try {
         const res = await fetch(
-          `http://localhost:5000 /api/food?skip=${
+          `http://localhost:5000/api/food?skip=${
             reset ? 0 : skip
           }&limit=${limit}&search=${filters.search}&category=${
             filters.category
