@@ -1,15 +1,15 @@
-import React, { useEffect, useMemo, useState } from "react";
+/* eslint-disable react/no-unescaped-entities */
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { FaAngleRight } from "react-icons/fa6";
 import Header from "../Header/Header";
 import Suggest from "../FirstSuggestionSection/Suggest";
-import foods from "../../data.json";
+// import foods from "../../data.json";
 import { Footer } from "../Footer/Footer";
 import { useSelector } from "react-redux";
 import Carousel from "../Carousel/Carousel";
 import FoodList from "../FoodList/FoodList";
 import HeaderMobile from "../HeaderForMobile/HeaderMobile";
 import CarouselSecond from "../Carousel/CarouselSecond";
-import MyOrder from "../MyOrders/MyOrder";
 import { useNavigate } from "react-router-dom";
 import { FaShoppingBag } from "react-icons/fa";
 
@@ -62,57 +62,101 @@ const HomePage = () => {
     };
   }, [lastScrollY]);
 
+  const [foods, setFoods] = useState([]);
+  const [skip, setSkip] = useState(0);
+  const [hasMore, setHasMore] = useState(true);
+  const [total, setTotal] = useState(0);
+  const limit = 10;
+
+  
+  const fetchData = useCallback(
+    async (reset = false) => {
+      try {
+        const res = await fetch(
+          `http://localhost:5000 /api/food?skip=${
+            reset ? 0 : skip
+          }&limit=${limit}&search=${filters.search}&category=${
+            filters.category
+          }&minPrice=${filters.price[0]}&maxPrice=${filters.price[1]}`
+        );
+        const data = await res.json();
+
+        if (reset) {
+          setFoods(data.data);
+          setSkip(limit);
+        } else {
+          setFoods((prev) => [...prev, ...data.data]);
+          setSkip((prev) => prev + limit);
+        }
+
+        setTotal(data.total);
+
+        // Update hasMore properly
+        const newCount = reset
+          ? data.data.length
+          : foods.length + data.data.length;
+
+        setHasMore(newCount < data.total);
+      } catch (err) {
+        console.error("Error fetching data:", err);
+      }
+    },
+    [skip, filters] // ⚡ include skip + filters in dependencies
+  );
+
+  // Reset + fetch when filters change
+  useEffect(() => {
+    fetchData(true);
+  }, [filters]);
+
   const handleCategory = (value) => {
     setFilters((prev) => ({ ...prev, category: value }));
   };
   const handleOffer = (value) => {
     setFilters((prev) => ({ ...prev, offer: value }));
   };
-  // console.log(filters.category);
-  // console.log(filters.offer);
-  // console.log(filters.category)
+
   const handlePrice = (a, b) => {
-    // setFilters((prev) => ({ ...prev, price: value }));
     setFilters((prev) => ({ ...prev, price: [a, b] }));
   };
-  // console.log(filters.price.length > 0, filters.price);
   const handleCartItemClick = (value) => {
     setCart((prev) => [...prev, value]);
   };
-  const filterFoodData = useMemo(() => {
-    return foods?.filter?.((food) => {
-      let isCategoryPresent = true;
-      let isNamePresent = true;
-      let isOfferPresent = true;
-      let isPricePresent = true;
+  // const filterFoodData = useMemo(() => {
+  //   return foods?.filter?.((food) => {
+  //     let isCategoryPresent = true;
+  //     let isNamePresent = true;
+  //     let isOfferPresent = true;
+  //     let isPricePresent = true;
 
-      if (filters.category) {
-        isCategoryPresent = food.category
-          ?.toLowerCase()
-          .includes(filters.category.toLowerCase());
-      }
-      if (filters.offer) {
-        isOfferPresent = food.category
-          ?.toLowerCase()
-          .includes(filters.offer.toLowerCase());
-      }
-      if (filters.price.length > 0) {
-        // isPricePresent = food.price < 100;
-        isPricePresent =
-          filters.price[0] <= food.price && food.price < filters.price[1];
-        // console.log("price", filters.price);
-      }
+  //     if (filters.category) {
+  //       isCategoryPresent = food.category
+  //         ?.toLowerCase()
+  //         .includes(filters.category.toLowerCase());
+  //     }
+  //     if (filters.offer) {
+  //       isOfferPresent = food.category
+  //         ?.toLowerCase()
+  //         .includes(filters.offer.toLowerCase());
+  //     }
+  //     if (filters.price.length > 0) {
+  //       // isPricePresent = food.price < 100;
+  //       isPricePresent =
+  //         filters.price[0] <= food.price && food.price < filters.price[1];
+  //       // console.log("price", filters.price);
+  //     }
 
-      if (filters.search) {
-        isNamePresent = food?.name
-          ?.toLowerCase()
-          .includes?.(filters.search.toLowerCase());
-      }
-      return (
-        isCategoryPresent && isNamePresent && isOfferPresent && isPricePresent
-      );
-    });
-  }, [filters]);
+  //     if (filters.search) {
+  //       isNamePresent = food?.name
+  //         ?.toLowerCase()
+  //         .includes?.(filters.search.toLowerCase());
+  //     }
+  //     return (
+  //       isCategoryPresent && isNamePresent && isOfferPresent && isPricePresent
+  //     );
+  //   });
+  // }, [filters, foods]);
+
   return (
     <>
       <HeaderMobile handleSearch={handleSearch} searchValue={filters.search} />
@@ -146,7 +190,9 @@ const HomePage = () => {
           showCart={showCart}
           setShowCart={setShowCart}
           setCart={setCart}
-          foodList={filterFoodData}
+          hasMore={hasMore}
+          fetchMore={fetchData}
+          foodList={foods}
           handleCartItemClick={handleCartItemClick}
           cart={cart}
         ></FoodList>

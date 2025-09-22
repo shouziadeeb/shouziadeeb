@@ -1,55 +1,184 @@
 import "./signIn.css";
 import { IoMdClose } from "react-icons/io";
-import React, { useRef } from "react";
+import React, { useState } from "react";
 
 export const SignIn = ({ sigInSidebar, setSignInSidebar, setUser }) => {
-  const numberRef = useRef();
-  const nameRef = useRef();
-  const emailRef = useRef();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [role, setRole] = useState(""); // seller / consumer
+  const [mode, setMode] = useState("login"); // login / register
 
-  const handleSignIndata = (e) => {
+  // 🔹 Handle Login
+  const handleLogin = async (e) => {
     e.preventDefault();
-    const numberValue = numberRef.current.value;
-    const nameValue = nameRef.current.value;
-    const emailValue = emailRef.current.value;
-    console.log(numberValue, nameValue, emailValue);
+    setError("");
+    setLoading(true);
 
-    const userValues = {
-      number: numberValue,
-      name: nameValue,
-      email: emailValue,
-    };
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
 
-    localStorage.setItem("user", JSON.stringify(userValues));
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || "Login failed");
 
-    numberRef.current.value = "";
-    nameRef.current.value = "";
-    emailRef.current.value = "";
+      localStorage.setItem("user", JSON.stringify(data.user));
+      localStorage.setItem("token", data.token);
 
-    const storedUser = JSON.parse(localStorage.getItem("user"));
-    setUser(storedUser);
+      setUser(data.user);
+      setSignInSidebar(false);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 🔹 Handle Register
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, password, role }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || "Register failed");
+
+      localStorage.setItem("user", JSON.stringify(data.user));
+      localStorage.setItem("token", data.token);
+
+      setUser(data.user);
+      setSignInSidebar(false);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div
       className="sighn_sidebar"
-      style={{
-        width: sigInSidebar && "100%",
-      }}
+      style={{ width: sigInSidebar ? "100%" : "0" }}
     >
       <div className="signIn_page">
-        <div className="text">
-          <h3>Sign In ?</h3>
-        </div>
+          <h3>Authentication</h3>
         <div className="to_close" onClick={() => setSignInSidebar(false)}>
           <IoMdClose />
         </div>
-        <form onSubmit={handleSignIndata}>
-          <input type="number" placeholder="Number" ref={numberRef} required />
-          <input type="text" placeholder="Name" ref={nameRef} required />
-          <input type="email" placeholder="Email" ref={emailRef} required />
-          <button type="submit">Sign in </button>
-        </form>
+
+        {/* Step 1 → Choose Role */}
+        {!role ? (
+          <div className="role-select">
+            <h4>Are you a Seller or Consumer?</h4>
+            <button className="role-btn" onClick={() => setRole("seller")}>
+              I am a Seller
+            </button>
+            <button className="role-btn" onClick={() => setRole("consumer")}>
+              I am a Consumer
+            </button>
+          </div>
+        ) : (
+          <>
+            {/* Step 2 → Choose Mode */}
+            <div className="auth-tabs">
+              <button
+                className={`tab-btn ${mode === "login" ? "active" : ""}`}
+                onClick={() => setMode("login")}
+              >
+                Sign In
+              </button>
+              <button
+                className={`tab-btn ${mode === "register" ? "active" : ""}`}
+                onClick={() => setMode("register")}
+              >
+                Register
+              </button>
+            </div>
+
+            {/* Step 3 → Show Form */}
+            {mode === "login" ? (
+              <form onSubmit={handleLogin}>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  minLength={6}
+                />
+                <p className="role-display">Role: {role}</p>
+
+                <button className="submit-btn" type="submit" disabled={loading}>
+                  {loading ? "Processing..." : "Sign In"}
+                </button>
+                {error && <p className="error">{error}</p>}
+              </form>
+            ) : (
+              <form onSubmit={handleRegister}>
+                <input
+                  type="text"
+                  placeholder="Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  minLength={6}
+                />
+                <p className="role-display">Role: {role}</p>
+
+                <button className="submit-btn" type="submit" disabled={loading}>
+                  {loading ? "Processing..." : "Register"}
+                </button>
+                {error && <p className="error">{error}</p>}
+              </form>
+            )}
+
+            <p
+              className="back-link"
+              onClick={() => {
+                setRole("");
+                setMode("login");
+                setName("");
+                setEmail("");
+                setPassword("");
+              }}
+            >
+              ⬅ Go Back
+            </p>
+          </>
+        )}
       </div>
     </div>
   );
