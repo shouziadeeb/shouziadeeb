@@ -6,6 +6,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaCheckCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import ConfirmModal from "../ConfirmModal/ConfirmModal";
+import { useUser } from "../../hooks/useUser";
 
 const notifySuccess = () => {
   toast.success(
@@ -31,6 +33,16 @@ export const LogInMobile = () => {
       ? JSON.parse(storedUser)
       : { number: "", name: "", email: "" };
   });
+  const { logout } = useUser();
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    logout();
+
+    navigate("/");
+    setShowLogoutModal(false);
+  };
 
   const handleOnchangeInput = (e) => {
     const { name, value } = e.target;
@@ -40,7 +52,9 @@ export const LogInMobile = () => {
       [name]: value,
     }));
   };
-
+  console.log("====================================");
+  console.log(localStorageUser);
+  console.log("====================================");
   const handleSignIndata = (e) => {
     e.preventDefault();
     localStorage.setItem("user", JSON.stringify(localStorageUser));
@@ -52,6 +66,16 @@ export const LogInMobile = () => {
 
   return (
     <div className="sigIn_sidebar1">
+      <div className="logout_btn">
+        <button onClick={() => setShowLogoutModal(true)}>Logout</button>
+        <ConfirmModal
+          isOpen={showLogoutModal}
+          onClose={() => setShowLogoutModal(false)}
+          onConfirm={handleLogout}
+          title="Logout Confirmation"
+          message="Are you sure you want to logout?"
+        />
+      </div>
       <div className="text_info">
         <h2>Edit Your Information Here</h2>
         <p>
@@ -62,22 +86,9 @@ export const LogInMobile = () => {
       <div className="signIn_page1">
         <form onSubmit={handleSignIndata}>
           <input
-            type="tel"
-            name="number"
-            maxlength="10"
-            minlength="10"
-            placeholder="Number"
-            value={localStorageUser ? localStorageUser.number : ""}
-            ref={numberRef}
-            onChange={(e) => {
-              handleOnchangeInput(e);
-            }}
-            required
-          />
-          <input
             type="text"
-            placeholder="Name"
             name="name"
+            placeholder="Name"
             value={localStorageUser ? localStorageUser.name : ""}
             ref={nameRef}
             onChange={(e) => {
@@ -86,7 +97,7 @@ export const LogInMobile = () => {
             required
           />
           <input
-            type="email"
+            type="text"
             placeholder="Email"
             name="email"
             value={localStorageUser ? localStorageUser.email : ""}
@@ -96,6 +107,17 @@ export const LogInMobile = () => {
             }}
             required
           />
+          {/* <input
+            type="email"
+            placeholder="Email"
+            name="email"
+            value={localStorageUser ? localStorageUser.email : ""}
+            ref={emailRef}
+            onChange={(e) => {
+              handleOnchangeInput(e);
+            }}
+            required
+          /> */}
           <button type="submit">Submit</button>
         </form>
       </div>

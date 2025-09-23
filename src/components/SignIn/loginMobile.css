@@ -1,18 +1,39 @@
 .sigIn_sidebar1 {
   height: 80vh;
-  width: 100vw;
+  width: 100%;
   background-color: white;
   z-index: 5;
   transition: 0.8s;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 20px;
   align-items: center;
   gap: 1vw;
   color: rgb(52, 52, 52);
   background: rgb(240, 240, 245);
   /* box-shadow: 1px 10px 50px; */
   margin-bottom: -2vw;
+  position: relative;
+}
+.logout_btn {
+  position: absolute;
+  width: 100%;
+  background: #232320;
+  top: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: end;
+}
+.logout_btn button {
+  padding: 15px 20px;
+  border: none;
+  background: black;
+  color: aliceblue;
+  font-size: 12px;
+  border-radius: 5px;
 }
 .sigIn_sidebar1 .text_info {
   width: 60%;
@@ -27,6 +48,7 @@
 .sigIn_sidebar1 .text_info p {
   font-size: 1.5vw;
 }
+
 .signIn_page1 {
   width: 100%;
   background-color: white;
@@ -64,7 +86,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .signIn_page1 button {
   width: 100%;
-  padding: .5vw 0;
+  padding: 0.5vw 0;
   border: none;
   background: #1a1d24;
   color: aliceblue;

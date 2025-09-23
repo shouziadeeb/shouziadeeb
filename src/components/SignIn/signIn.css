@@ -117,6 +117,25 @@ select {
 
   border-radius: 5px;
 }
+.password-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-field input {
+  width: 100%;
+  padding-right: 40px; /* space for the eye icon */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #555;
+}
+
 @media (max-width: 600px) {
   .signIn_page {
     width: 100%;

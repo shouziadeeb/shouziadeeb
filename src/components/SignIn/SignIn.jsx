@@ -1,5 +1,5 @@
 import "./signIn.css";
-import { IoMdClose } from "react-icons/io";
+import { IoMdClose, IoMdEye, IoMdEyeOff } from "react-icons/io";
 import React, { useState } from "react";
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -13,8 +13,11 @@ export const SignIn = ({ sigInSidebar, setSignInSidebar, setUser }) => {
   const [error, setError] = useState("");
   const [role, setRole] = useState(""); // seller / consumer
   const [mode, setMode] = useState("login"); // login / register
+  const [showPassword, setShowPassword] = useState(false);
 
-  console.log(API_URL);
+  const togglePassword = () => {
+    setShowPassword((prev) => !prev);
+  };
 
   // 🔹 Handle Login
   const handleLogin = async (e) => {
@@ -122,14 +125,20 @@ export const SignIn = ({ sigInSidebar, setSignInSidebar, setUser }) => {
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
-                <input
-                  type="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  minLength={6}
-                />
+                <div className="password-field">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    minLength={6}
+                  />
+                  <span className="toggle-password" onClick={togglePassword}>
+                    {showPassword ? <IoMdEyeOff /> : <IoMdEye />}
+                  </span>
+                </div>
+
                 <p className="role-display">Role: {role}</p>
 
                 <button className="submit-btn" type="submit" disabled={loading}>
