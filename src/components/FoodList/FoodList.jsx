@@ -40,7 +40,7 @@ const FoodList = ({
       if (loaderRef.current) observer.unobserve(loaderRef.current);
     };
   }, [fetchMore, hasMore]);
-
+  console.log(foodList.length);
   return (
     <section className="card_section">
       {/* Overlay for closing cart */}
@@ -58,7 +58,7 @@ const FoodList = ({
         setshowAddress={setshowAddress}
       />
       {/* Food Items */}
-      {isLoading && foodList.length === 0
+      {isLoading && foodList.length < 5
         ? Array.from({ length: 6 }).map((_, idx) => (
             <FoodItemCard key={idx} loading={true} />
           ))
@@ -70,9 +70,16 @@ const FoodList = ({
               isAlreadyInCart={cartData.some(
                 (cartItem) => cartItem.name === foodItem.name
               )}
-              loading={isLoading}
+              loading={false}
             />
           ))}
+      {isLoading && foodList.length > 0 && (
+        <>
+          {Array.from({ length: 3 }).map((_, idx) => (
+            <FoodItemCard key={`skeleton-${idx}`} loading={true} />
+          ))}
+        </>
+      )}
 
       {foodList.length === 0 && (
         <div className="no_item_found">
