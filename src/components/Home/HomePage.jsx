@@ -24,8 +24,10 @@ const HomePage = () => {
   });
   const [showCart, setShowCart] = useState(false);
   const [cart, setCart] = useState([]);
-  const [showOnScroll, setShowOnScroll] = useState(true);
+  const [showOnScroll, setShowOnScroll] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+
   const handleSearch = (value) => {
     setFilters((prev) => ({ ...prev, search: value }));
   };
@@ -72,6 +74,7 @@ const HomePage = () => {
   const fetchData = useCallback(
     async (reset = false) => {
       try {
+        setIsLoading(true);
         const res = await fetch(
           `${API_URL}/api/food?skip=${reset ? 0 : skip}&limit=${limit}&search=${
             filters.search
@@ -99,6 +102,8 @@ const HomePage = () => {
         setHasMore(newCount < data.total);
       } catch (err) {
         console.error("Error fetching data:", err);
+      } finally {
+        setIsLoading(false); // ✅ always runs
       }
     },
     [skip, filters] // ⚡ include skip + filters in dependencies
@@ -188,6 +193,7 @@ const HomePage = () => {
       <div className="foodList_container">
         <FoodList
           showCart={showCart}
+          isLoading={isLoading}
           setShowCart={setShowCart}
           setCart={setCart}
           hasMore={hasMore}

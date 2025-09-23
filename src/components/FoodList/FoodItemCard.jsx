@@ -9,8 +9,8 @@ export function FoodItemCard({
   foodItem,
   handleCartItemClick,
   isAlreadyInCart,
+  loading,
 }) {
-  const [loading, setLoading] = useState(true); 
   const dispatch = useDispatch();
 
   const addNewCart = (payload) => {
@@ -18,19 +18,11 @@ export function FoodItemCard({
   };
 
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false); // Set loading to false after 2 seconds
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
   let isScreenSize = window.innerWidth > 600;
   return (
     <>
       <div className="food_card">
         {loading ? (
-       
           <div
             style={{
               width: "100%",

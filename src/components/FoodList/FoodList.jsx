@@ -49,7 +49,6 @@ const FoodList = ({
         onClick={() => setShowCart(false)}
         style={{ width: showCart ? "100%" : "0" }}
       />
-
       {/* Sidebar */}
       <CartSidebar
         setShowCart={setShowCart}
@@ -58,20 +57,24 @@ const FoodList = ({
         setCart={setCart}
         setshowAddress={setshowAddress}
       />
-
       {/* Food Items */}
-      {foodList.length > 0 ? (
-        foodList.map((foodItem) => (
-          <FoodItemCard
-            foodItem={foodItem}
-            key={foodItem._id} // fallback for MongoDB _id
-            handleCartItemClick={handleCartItemClick}
-            isAlreadyInCart={cartData.some(
-              (cartItem) => cartItem.name === foodItem.name
-            )}
-          />
-        ))
-      ) : (
+      {isLoading && foodList.length === 0
+        ? Array.from({ length: 6 }).map((_, idx) => (
+            <FoodItemCard key={idx} loading={true} />
+          ))
+        : foodList.map((foodItem) => (
+            <FoodItemCard
+              foodItem={foodItem}
+              key={foodItem._id}
+              handleCartItemClick={handleCartItemClick}
+              isAlreadyInCart={cartData.some(
+                (cartItem) => cartItem.name === foodItem.name
+              )}
+              loading={isLoading}
+            />
+          ))}
+
+      {foodList.length === 0 && (
         <div className="no_item_found">
           <img
             src="https://cdni.iconscout.com/illustration/premium/thumb/sorry-item-not-found-illustration-download-in-svg-png-gif-file-formats--available-product-tokostore-pack-e-commerce-shopping-illustrations-2809510.png"
@@ -80,11 +83,9 @@ const FoodList = ({
           <h1>No Item Found</h1>
         </div>
       )}
-
       {/* Loader / End Messages */}
       {isLoading && <p>Loading more items...</p>}
       {!hasMore && foodList.length > 0 && <p>No more items to load</p>}
-
       {/* Invisible div that triggers IntersectionObserver */}
       {hasMore && !isLoading && <div ref={loaderRef} style={{ height: 1 }} />}
     </section>
