@@ -1,9 +1,10 @@
 import "./signIn.css";
 import { IoMdClose } from "react-icons/io";
 import React, { useState } from "react";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export const SignIn = ({ sigInSidebar, setSignInSidebar, setUser }) => {
-  const API_URL = "https://fooddelivery-lzym.onrender.com";
+  // const API_URL = "https://fooddelivery-lzym.onrender.com";
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -12,6 +13,8 @@ export const SignIn = ({ sigInSidebar, setSignInSidebar, setUser }) => {
   const [error, setError] = useState("");
   const [role, setRole] = useState(""); // seller / consumer
   const [mode, setMode] = useState("login"); // login / register
+
+  console.log(API_URL);
 
   // 🔹 Handle Login
   const handleLogin = async (e) => {
